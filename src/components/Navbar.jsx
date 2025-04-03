@@ -1,10 +1,10 @@
 
 import React, { useState } from 'react';
-import { CiSearch } from 'react-icons/ci';
+
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { FaLocationDot, FaUser } from 'react-icons/fa6';
-import { IoIosNotifications } from 'react-icons/io';
-import { IoCart, IoNotifications } from 'react-icons/io5';
+
+import { IoNotifications } from 'react-icons/io5';
 
 const Navbar = () => {
 	const [selectedLanguage, setSelectedLanguage] = useState("English");
@@ -81,22 +81,14 @@ const Navbar = () => {
 								</option>
 							))}
 						</select>
-						<div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-							<svg
-								className="fill-current h-4 w-4"
-								xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 20 20"
-							>
-								<path d="M14.95 7.95a.5.5 0 00-.7-.7L10 11.5 5.75 7.25a.5.5 0 00-.7.7l5 5a.5.5 0 00.7 0l5-5z" />
-							</svg>
-						</div>
+						
 					</div>
 
 					{/* notice cart user */}
 					<div className='flex items-center gap-4 '>
 						<div className='flex flex-col items-center leading-2.5'>
 							<IoNotifications />
-							<p className='text-xs'>notice</p>
+							<p className='text-xs'>notification</p>
 						</div>
 						<div className='flex flex-col items-center leading-2.5'>
 							<FaShoppingCart />
@@ -146,81 +138,85 @@ const Navbar = () => {
 			</div>
 
 			{/* third nav */}
-			<nav className="bg-[#eeeeee]">
-      <div className="px-10  ">
-        <div className="flex items-center justify-between h-16">
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-2">
-            {menuItems.map((item) => (
-              <a
-                key={item.name} // Use path as unique key
-                href={item.path}
-                className="text-primary font-bold hover:text-blue-600 text-sm px-3 py-2 transition-colors"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
+			<nav className=" bg-white border-t-1 md:bg-[#eeeeee]">
+				<div className="px-10  ">
+					<div className="flex items-center justify-between h-16">
+						{/* Desktop Menu */}
+						<div className="hidden md:flex items-center space-x-2">
+							{menuItems.map((item) => (
+								<a
+									key={item.name} // Use path as unique key
+									href={item.path}
+									className="text-primary font-bold hover:text-blue-600 text-sm px-3 py-2 transition-colors"
+								>
+									{item.name}
+								</a>
+							))}
+						</div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-primary hover:text-blue-600 p-2 rounded-lg transition-colors"
-              aria-expanded={isOpen}
-            >
-              {!isOpen ? (
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
+						{/* Mobile Menu Button */}
+						<div className="md:hidden flex items-center">
+							
+							<button
+								onClick={() => setIsOpen(!isOpen)}
+								className="text-primary hover:text-blue-600 p-2 rounded-lg transition-colors"
+								aria-expanded={isOpen}
+							>
+								{!isOpen ? (
+									<svg
+										className="w-8 h-8"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+									>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth={2}
+											d="M4 6h16M4 12h16M4 18h16"
+										/>
+									</svg>
+									
+									
+								) : (
+									<svg
+										className="w-8 h-8"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+									>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											strokeWidth={2}
+											d="M6 18L18 6M6 6l12 12"
+										/>
+									</svg>
+								)}
+							</button>
+						</div>
+					</div>
+				</div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="px-4 py-3 space-y-2">
-            {menuItems.map((item) => (
-              <a
-                key={item.path}
-                href={item.path}
-                className="block text-gray-700 hover:bg-gray-100 px-3 py-2 rounded-lg"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
-    </nav>
+				{/* Mobile Menu */}
+				{isOpen && (
+					<div className="md:hidden bg-[#eeeeee] border-t">
+						<div className="py-3 space-y-2">
+							{menuItems.map((item) => (
+								<a
+									key={item.path}
+									href={item.path}
+									className="block text-gray-700 hover:bg-gray-100 px-3 py-2  border-b"
+									onClick={() => setIsOpen(false)}
+								>
+									{item.name}
+								</a>
+							))}
+						</div>
+					
+					</div>
+				)}
+			</nav>
 
 		</div>
 	);
