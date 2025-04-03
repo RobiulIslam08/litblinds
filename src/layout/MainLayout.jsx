@@ -11,7 +11,7 @@ const MainLayout = () => {
 			<div className="w-[90%] mx-auto">
 			<Outlet></Outlet>
 			</div>
-			<Footer></Footer>
+			{/* <Footer></Footer> */}
 		</div>
 	);
 };
