@@ -8,7 +8,7 @@ const MainLayout = () => {
 		<div>
 			<Navbar></Navbar>
 			{/* <ToastContainer position="top-center"></ToastContainer> */}
-			<div className="w-[90%] mx-auto">
+			<div className="w-[98%] mx-auto">
 			<Outlet></Outlet>
 			</div>
 			{/* <Footer></Footer> */}
