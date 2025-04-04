@@ -5,7 +5,7 @@ import ceiling from "../../assets/images/ourProducts/wall-and-ceiling.png"
 import pvc from "../../assets/images/ourProducts/pvc-floring.png"
 const OurProduct = () => {
 	return (
-		<div className='pt-6 lg:pt-12  pb-6 lg:pb-12'>
+		<div className='mt-6 lg:mt-12  mb-6 lg:mb-12'>
 			{/* heading */}
 			<div className='text-center pb-9'>
 				<h1 className='text-lg lg:text-3xl font-bold text-[#222222]'>Explore Our Products</h1>
