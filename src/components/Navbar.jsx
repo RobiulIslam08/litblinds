@@ -6,7 +6,7 @@ import { FaLocationDot, FaUser } from 'react-icons/fa6';
 
 import { IoNotifications } from 'react-icons/io5';
 import videoLogo from "../assets/video.mp4"
-import Discount from './Discount';
+import Discount from './home/Discount';
 
 const Navbar = () => {
 	const [selectedLanguage, setSelectedLanguage] = useState("English");
@@ -209,22 +209,22 @@ const Navbar = () => {
 
 			{/* Mobile Menu */}
 			{isOpen && (
-					<div className="md:hidden bg-[#eeeeee] border-t w-[70%] absolute z-10">
-						<div className="py-3 space-y-2">
-							{menuItems.map((item) => (
-								<a
-									key={item.path}
-									href={item.path}
-									className="block text-gray-700 hover:bg-gray-100 px-3 py-2  border-b"
-									onClick={() => setIsOpen(false)}
-								>
-									{item.name}
-								</a>
-							))}
-						</div>
-
+				<div className="md:hidden bg-[#eeeeee] border-t w-[70%] absolute z-10">
+					<div className="py-3 space-y-2">
+						{menuItems.map((item) => (
+							<a
+								key={item.path}
+								href={item.path}
+								className="block text-gray-700 hover:bg-gray-100 px-3 py-2  border-b"
+								onClick={() => setIsOpen(false)}
+							>
+								{item.name}
+							</a>
+						))}
 					</div>
-				)}
+
+				</div>
+			)}
 
 
 			{/* second part */}

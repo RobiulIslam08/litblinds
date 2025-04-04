@@ -3,9 +3,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import slider1 from "../assets/images/slides/slide1.jpg";
-import slider2 from "../assets/images/slides/slide2.jpg";
-import slider3 from "../assets/images/slides/slide3.jpg";
+import slider1 from "../../assets/images/slides/slide1.jpg";
+import slider2 from "../../assets/images/slides/slide2.jpg";
+import slider3 from "../../assets/images/slides/slide3.jpg";
 
 
 import { Navigation, Autoplay, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
