@@ -6,38 +6,38 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 const reviews = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Abdur Rahman",
+    avatar: "https://i.ibb.co.com/gPvQ8WT/avatar-1-150x150.png",
     date: "2 weeks ago",
     rating: 5,
     comment:
       "It Was A Very Comfortable And Informative Experience Shopping At Lit Blinds. The Staff Were Very Friendly And Were Available Upon Entering The Store. I Would Recommend Anyone Looking For Window Coverings To Go To 'Lit Blinds'. Thank You.",
-    position: "Marketing Director",
+    position: "Banker",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Rahadul Islam",
+    avatar: "https://i.ibb.co.com/TTrWGqW/avatar-3-150x150.png",
     date: "1 month ago",
     rating: 4,
 	comment:
 	"It Was A Very Comfortable And Informative Experience Shopping At Lit Blinds. The Staff Were Very Friendly And Were Available Upon Entering The Store. I Would Recommend Anyone Looking For Window Coverings To Go To 'Lit Blinds'. Thank You.",
-    position: "Software Engineer",
+    position: "Teacher",
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Rabbil Hasan",
+    avatar: "https://i.ibb.co.com/dkhMfM5/portrait-young-confident-businessman-wearing-glasses.jpg",
     date: "3 weeks ago",
     rating: 5,
 	comment:
 	"It Was A Very Comfortable And Informative Experience Shopping At Lit Blinds. The Staff Were Very Friendly And Were Available Upon Entering The Store. I Would Recommend Anyone Looking For Window Coverings To Go To 'Lit Blinds'. Thank You.",
-    position: "Product Designer",
+    position: "Programmer",
   },
   {
     id: 4,
-    name: "David Thompson",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Arif Ahmed",
+    avatar: "https://i.ibb.co.com/1KTqkxJ/young-adult-enjoying-virtual-date.jpg",
     date: "2 months ago",
     rating: 4,
 	comment:
@@ -46,13 +46,13 @@ const reviews = [
   },
   {
     id: 5,
-    name: "Lisa Wang",
-    avatar: "/placeholder.svg?height=40&width=40",
+    name: "Shahinur Rahman",
+    avatar: "https://i.ibb.co.com/8mrRb23/portrait-young-smiling-handsome-model-man-dressed-gray-casual-hoodie-clothes-posing-white-wall-isola.jpg",
     date: "1 week ago",
     rating: 5,
 	comment:
 	"It Was A Very Comfortable And Informative Experience Shopping At Lit Blinds. The Staff Were Very Friendly And Were Available Upon Entering The Store. I Would Recommend Anyone Looking For Window Coverings To Go To 'Lit Blinds'. Thank You.",
-    position: "Creative Director",
+    position: "Businessman",
   },
 ]
 

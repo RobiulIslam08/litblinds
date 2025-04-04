@@ -26,7 +26,7 @@ const Navbar = () => {
 	const menuItems = [
 		{ name: 'Home', path: '/' },
 		{ name: 'Window Blinds', path: '/window-blinds' },
-		{ name: 'Wallpaper', path: '/wallpaper' },
+		{ name: 'Wallpaper', path: '/allproduct/wallpaper' },
 		{ name: 'Wall And Ceiling Panels', path: '/wall-ceiling-panels' },
 		{ name: 'PPVC Flooring (Vinyl Flooring)', path: '/pvc-flooring' },
 		{ name: 'Shop By Need/Room', path: '/shop-by-need' },
