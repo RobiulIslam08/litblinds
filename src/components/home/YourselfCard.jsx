@@ -60,19 +60,19 @@ const YourselfCard = () => {
 				<div>
 					<h1 className='text-center text-white font-semibold text-lg lg:text-2xl pb-4'>DO IT YOURSELF</h1>
 					<div className='grid grid-cols-2 gap-5'>
-						<div className='flex items-center gap-1 text-white font-semibold'>
+						<div className='flex items-center gap-1 text-white lg:font-semibold'>
 							<RiRectangleFill />
 							<h1>BUYING GUIDES{'>'}{'>'}</h1>
 						</div>
-						<div className='flex items-center gap-1 text-white font-semibold'>
+						<div className='flex items-center gap-1 text-white lg:font-semibold'>
 							<RiRectangleFill />
 							<h1>MEASURE {'>'}{'>'}</h1>
 						</div>
-						<div className='flex items-center gap-1 text-white font-semibold'>
+						<div className='flex items-center gap-1 text-white lg:font-semibold'>
 							<RiRectangleFill />
 							<h1>TECH TIPS {'>'}{'>'}</h1>
 						</div>
-						<div className='flex items-center gap-1 text-white font-semibold'>
+						<div className='flex items-center gap-1 text-white lg:font-semibold'>
 							<RiRectangleFill />
 							<h1>INSTALL {'>'}{'>'}</h1>
 						</div>
@@ -84,7 +84,7 @@ const YourselfCard = () => {
 					<h1 className='text-lg lg:text-2xl font-semibold text-white pb-4 text-center lg:text-left'>
 						PROFESSIONAL MEASURING & INSTALLATION
 					</h1>
-					<p className='text-white font-semibold text-center lg:text-left lg:text-sm'>$000 FULL-HOME MEASURING & INSTALLATION PACKAGE {'>'}{'>'}</p>
+					<p className='text-white lg:font-semibold text-center lg:text-left lg:text-sm'>$000 FULL-HOME MEASURING & INSTALLATION PACKAGE {'>'}{'>'}</p>
 				</div>
 			</div>
 		</div>
