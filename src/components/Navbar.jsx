@@ -6,6 +6,7 @@ import { FaLocationDot, FaUser } from 'react-icons/fa6';
 
 import { IoNotifications } from 'react-icons/io5';
 import videoLogo from "../assets/video.mp4"
+import Discount from './Discount';
 
 const Navbar = () => {
 	const [selectedLanguage, setSelectedLanguage] = useState("English");
@@ -344,6 +345,7 @@ const Navbar = () => {
 					</div>
 				)} */}
 			</nav>
+			<Discount></Discount>
 
 		</div>
 	);
