@@ -1,13 +1,14 @@
 import React from 'react';
 import image1 from "../../assets/images/window-blinds/1.png"
+import YourselfCard from './YourselfCard';
 const WindowBlinds = () => {
 	return (
-		<div className='mt-12 lg:mt-20  mb-6 lg:mb-20 bg-[#BCA9CC] rounded-3xl'>
+		<div className='mt-12 lg:mt-20   lg:mb-20 bg-[#BCA9CC] rounded-3xl pb-5'>
 			<h1 className='lg:text-4xl text-xl font-bold text-shadow-xl drop-shadow-[4px_4px_5px_rgba(0,0,0,0.7)] text-center pt-12 pb-8'>Window Blinds Shades Shutters</h1>
 
 			{/* product */}
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 p-2'>
-				<div className="relative w-[295px] h-[295px]">
+			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-2 justify-items-center mx-auto'>
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px] ">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -18,7 +19,7 @@ const WindowBlinds = () => {
 						Vertical Blinds
 					</p>
 				</div>
-				<div className="relative w-[295px] h-[295px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -29,7 +30,7 @@ const WindowBlinds = () => {
 						Vertical Blinds
 					</p>
 				</div>
-				<div className="relative w-[295px] h-[295px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -40,7 +41,7 @@ const WindowBlinds = () => {
 						Vertical Blinds
 					</p>
 				</div>
-				<div className="relative w-[295px] h-[295px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -51,7 +52,7 @@ const WindowBlinds = () => {
 						Vertical Blinds
 					</p>
 				</div>
-				<div className="relative w-[295px] h-[295px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -62,7 +63,7 @@ const WindowBlinds = () => {
 						Vertical Blinds
 					</p>
 				</div>
-				<div className="relative w-[295px] h-[295px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -73,7 +74,7 @@ const WindowBlinds = () => {
 						Vertical Blinds
 					</p>
 				</div>
-				<div className="relative w-[295px] h-[295px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -84,7 +85,7 @@ const WindowBlinds = () => {
 						Vertical Blinds
 					</p>
 				</div>
-				<div className="relative w-[295px] h-[295px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -97,6 +98,7 @@ const WindowBlinds = () => {
 				</div>
 				
 			</div>
+			<YourselfCard></YourselfCard>
 			
 		</div>
 	);
