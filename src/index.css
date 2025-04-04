@@ -2,3 +2,9 @@
 .text-primary {
   @apply text-[#1e3b6f];
 }
+.swiper-button-next,
+.swiper-button-prev {
+  font-size: 11px; /* Controls arrow size */
+  width: 30px;
+  height: 30px;
+}
