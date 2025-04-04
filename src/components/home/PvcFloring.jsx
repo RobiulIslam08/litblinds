@@ -10,7 +10,7 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 AOS.init();
 const PvcFloring = () => {
 	return (
-		<div className='mt-12 lg:mt-20   lg:mb-20 bg-[#BCA9CC] rounded-3xl pb-5'>
+		<div className='mt-12 lg:mt-20   lg:mb-10 bg-[#BCA9CC] rounded-3xl pb-5'>
 			<h1 className='lg:text-4xl text-xl font-bold text-shadow-xl drop-shadow-[4px_4px_5px_rgba(0,0,0,0.7)] text-center pt-12 pb-8'>PVC Flooring (Vinyl flooring)
 			</h1>
 

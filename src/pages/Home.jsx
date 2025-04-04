@@ -7,6 +7,7 @@ import WindowBlinds from '../components/home/WindowBlinds';
 import Wallpaper from '../components/home/Wallpaper';
 import WallAndCeiling from '../components/home/WallAndCeiling';
 import PvcFloring from '../components/home/PvcFloring';
+import CustomerReview from '../components/home/CustomerReview';
 
 const Home = () => {
 	return (
@@ -18,6 +19,7 @@ const Home = () => {
 			<Wallpaper></Wallpaper>
 			<WallAndCeiling></WallAndCeiling>
 			<PvcFloring></PvcFloring>
+			<CustomerReview></CustomerReview>
 		</div>
 	);
 };

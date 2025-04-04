@@ -1,6 +1,10 @@
 import React from 'react';
 import image1 from "../../assets/images/wallpapers/742f5b.png"
 import YourselfCard from './YourselfCard';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 const Wallpaper = () => {
 	return (
 		<div className='mt-12 lg:mt-20   lg:mb-20 bg-[#BCA9CC] rounded-3xl pb-5'>
@@ -8,7 +12,7 @@ const Wallpaper = () => {
 
 			{/* product */}
 			<div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 p-2 justify-items-center mx-auto'>
-				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px] ">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px] " data-aos="zoom-in"  data-aos-duration="3000">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -19,7 +23,7 @@ const Wallpaper = () => {
 						3D Wallpapers
 					</p>
 				</div>
-				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]" data-aos="zoom-in"  data-aos-duration="3000">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -30,7 +34,7 @@ const Wallpaper = () => {
 						Custom Wallpapers
 					</p>
 				</div>
-				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]" data-aos="zoom-in"  data-aos-duration="3000">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
@@ -41,7 +45,7 @@ const Wallpaper = () => {
 						Regular Wallpapers
 					</p>
 				</div>
-				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]">
+				<div className="relative  lg:w-[295px]  lg:h-[295px] w-[140px] h-[140px]" data-aos="zoom-in"  data-aos-duration="3000">
 					{/* Image */}
 					<img src={image1} alt="Vertical Blinds" className="w-full h-full object-cover" />
 
