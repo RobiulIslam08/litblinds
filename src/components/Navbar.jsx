@@ -33,7 +33,7 @@ const Navbar = () => {
 		{ name: 'PPVC Flooring (Vinyl Flooring)', path: '/allproduct/pvc-flooring' },
 		{ name: 'Shop By Need/Room', path: '/allproduct/shop-by-need' },
 		{ name: 'Shop By Features', path: '/allproduct/shop-by-features' },
-		{ name: 'Help Center', path: '/allproduct/help-center' },
+		{ name: 'Help Center', path: '/help-center' },
 		{ name: 'Find Retailer', path: '/allproduct/find-retailer' },
 	];
 
@@ -46,18 +46,7 @@ const Navbar = () => {
 				{/* this for desktop */}
 				<p className='text-primary font-semibold text-xs hidden lg:flex'>Your trusted store for Home Decoration</p>
 				{/* this for mobile */}
-				<video
-					src={videoLogo} // Changed path
-					autoPlay
-					loop
-					muted
-
-
-					style={{ width: '80px', height: 'auto' }} // Explicit dimensions
-					className="w-full h-auto lg:hidden flex"
-				>
-					Your browser does not support the video tag.
-				</video>
+			
 
 				{/* mobile menu button */}
 				<div className="md:hidden flex items-center">
@@ -100,6 +89,19 @@ const Navbar = () => {
 						)}
 					</button>
 				</div>
+
+				<video
+					src={videoLogo} // Changed path
+					autoPlay
+					loop
+					muted
+
+
+					style={{ width: '80px', height: 'auto' }} // Explicit dimensions
+					className="w-full h-auto lg:hidden flex"
+				>
+					Your browser does not support the video tag.
+				</video>
 
 
 

@@ -9,6 +9,7 @@ import WallAndCeillingPanelPage from "../pages/WallAndCeillingPanel";
 import PvcFlooringPage from "../pages/PvcFlooringPage";
 import ShopNeedPage from "../pages/ShopNeedPage";
 import ShopByFeaturePage from "../pages/ShopByFeaturePage";
+import HelpCenter from "../pages/HelpCenter";
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 				path: '/',
 				element: <Home></Home>
 			},
+			{
+				path:'help-center',
+				element:<HelpCenter></HelpCenter>
+			}
 			
 		]
 	},
@@ -51,7 +56,8 @@ const router = createBrowserRouter([
 			{
 				path:'shop-by-features',
 				element:<ShopByFeaturePage></ShopByFeaturePage>
-			}
+			},
+			
 			
 			// অন্যান্য route গুলো এখানে
 		],
