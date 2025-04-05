@@ -7,8 +7,10 @@ import { FaLocationDot, FaUser } from 'react-icons/fa6';
 import { IoNotifications } from 'react-icons/io5';
 import videoLogo from "../assets/video.mp4"
 import Discount from './home/Discount';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+	const location = useLocation();
 	const [selectedLanguage, setSelectedLanguage] = useState("English");
 
 	const languages = ["English", "Español", "Français", "Arabic"];
@@ -345,7 +347,7 @@ const Navbar = () => {
 					</div>
 				)} */}
 			</nav>
-			<Discount></Discount>
+			{location.pathname === '/' && <Discount />}
 
 		</div>
 	);

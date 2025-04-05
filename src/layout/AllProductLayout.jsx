@@ -1,13 +1,32 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../components/dashboard/Sidebar";
-import YouMayAlsoLike from "../components/dashboard/YouMayAlsoLike";
+ import YouMayAlsoLike from "../components/dashboard/YouMayAlsoLike";
 import { useState } from "react";
 
 export default function AllProductLayout() {
+	const location = useLocation();
 	const languages = ["Most Popular", "Newest", "Lowest Price"];
 	const [selectedLanguage, setSelectedLanguage] = useState("Most Popular");
+	  // রাউট অনুযায়ী টাইটেল ফরম্যাট করার ফাংশন
+	  const getPageTitle = () => {
+		const pathSegments = location.pathname.split('/');
+		const lastSegment = pathSegments[pathSegments.length - 1];
+		
+		const titleMap = {
+		  'wallpaper': 'Wallpaper',
+		  'window-blinds': 'Window Blinds',
+		  'wall-ceiling-panels': 'Wall & Ceiling Panels',
+		  'pvc-flooring': 'PVC Flooring',
+		  'shop-by-need': 'Shop By Need/Room',
+		  'shop-by-features': 'Shop By Features',
+		  'help-center': 'Help Center',
+		  'find-retailer': 'Find Retailer'
+		};
+	
+		return titleMap[lastSegment] || lastSegment.replace(/-/g, ' ').replace(/(^\w|\s\w)/g, m => m.toUpperCase());
+	  };
 	return (
 		<div className="min-h-screen flex flex-col">
 			{/* Fixed Navbar (4rem = 64px standard navbar height) */}
@@ -48,7 +67,7 @@ export default function AllProductLayout() {
 						</div>
 						<div>
 							<p className="text-lg font-bold">
-							Wallpaper</p>
+							{getPageTitle()}</p>
 						</div>
 					</div>
 					<Outlet />
