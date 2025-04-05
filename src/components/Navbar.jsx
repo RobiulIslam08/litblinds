@@ -25,14 +25,14 @@ const Navbar = () => {
 
 	const menuItems = [
 		{ name: 'Home', path: '/' },
-		{ name: 'Window Blinds', path: '/window-blinds' },
+		{ name: 'Window Blinds', path: '/allproduct/window-blinds' },
 		{ name: 'Wallpaper', path: '/allproduct/wallpaper' },
-		{ name: 'Wall And Ceiling Panels', path: '/wall-ceiling-panels' },
-		{ name: 'PPVC Flooring (Vinyl Flooring)', path: '/pvc-flooring' },
-		{ name: 'Shop By Need/Room', path: '/shop-by-need' },
-		{ name: 'Shop By Features', path: '/shop-by-features' },
-		{ name: 'Help Center', path: '/help-center' },
-		{ name: 'Find Retailer', path: '/find-retailer' },
+		{ name: 'Wall And Ceiling Panels', path: '/allproduct/wall-ceiling-panels' },
+		{ name: 'PPVC Flooring (Vinyl Flooring)', path: '/allproduct/pvc-flooring' },
+		{ name: 'Shop By Need/Room', path: '/allproduct/shop-by-need' },
+		{ name: 'Shop By Features', path: '/allproduct/shop-by-features' },
+		{ name: 'Help Center', path: '/allproduct/help-center' },
+		{ name: 'Find Retailer', path: '/allproduct/find-retailer' },
 	];
 
 

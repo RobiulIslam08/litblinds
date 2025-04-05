@@ -4,6 +4,11 @@ import MainLayout from "../layout/MainLayout";
 import ErrorPage from "../pages/ErrorPage";
 import AllProductLayout from "../layout/AllProductLayout";
 import WallpapersPage from "../pages/WallpapersPage";
+import WindowBlindsPage from "../pages/WindowBlindsPage";
+import WallAndCeillingPanelPage from "../pages/WallAndCeillingPanel";
+import PvcFlooringPage from "../pages/PvcFlooringPage";
+import ShopNeedPage from "../pages/ShopNeedPage";
+import ShopByFeaturePage from "../pages/ShopByFeaturePage";
 
 const router = createBrowserRouter([
 	{
@@ -27,6 +32,26 @@ const router = createBrowserRouter([
 				path: "wallpaper",
 				element: <WallpapersPage />,
 			},
+			{
+				path:"window-blinds",
+				element:<WindowBlindsPage></WindowBlindsPage>
+			},
+			{
+				path:'wall-ceiling-panels',
+				element:<WallAndCeillingPanelPage></WallAndCeillingPanelPage>
+			},
+			{
+				path:'pvc-flooring',
+				element:<PvcFlooringPage></PvcFlooringPage>
+			},
+			{
+				path:'shop-by-need',
+				element:<ShopNeedPage></ShopNeedPage>
+			},
+			{
+				path:'shop-by-features',
+				element:<ShopByFeaturePage></ShopByFeaturePage>
+			}
 			
 			// অন্যান্য route গুলো এখানে
 		],
