@@ -1,15 +1,15 @@
 import React from 'react';
-import wallpaper from '../assets/images/you-may-also-like/wallpaper.png'
-import pvc from '../assets/images/you-may-also-like/pvc-floring.png'
-import wall_and_ceilling from '../assets/images/you-may-also-like/wall-and-ceilling.png'
-import honycomb from "../assets/images/you-may-also-like/honeycomb.png"
-import custom_blinds from "../assets/images/you-may-also-like/custom-blinds.png"
-import curtains_draps from "../assets/images/you-may-also-like/curtains-draps.png"
-import roller_blinds from "../assets/images/you-may-also-like/roller_blinds.png"
-import ruman_blind from "../assets/images/you-may-also-like/ruman_blind.png"
-import zebra_blinds from "../assets/images/you-may-also-like/zebra_blinds.png"
-import wood_shade from "../assets/images/you-may-also-like/wood_shade.png"
-import wood_shutter from "../assets/images/you-may-also-like/wood_shutter.png"
+import wallpaper from '../../assets/images/you-may-also-like/wallpaper.png'
+import pvc from '../../assets/images/you-may-also-like/pvc-floring.png'
+import wall_and_ceilling from '../../assets/images/you-may-also-like/wall-and-ceilling.png'
+import honycomb from "../../assets/images/you-may-also-like/honeycomb.png"
+import custom_blinds from "../../assets/images/you-may-also-like/custom-blinds.png"
+import curtains_draps from "../../assets/images/you-may-also-like/curtains-draps.png"
+import roller_blinds from "../../assets/images/you-may-also-like/roller_blinds.png"
+import ruman_blind from "../../assets/images/you-may-also-like/ruman_blind.png"
+import zebra_blinds from "../../assets/images/you-may-also-like/zebra_blinds.png"
+import wood_shade from "../../assets/images/you-may-also-like/wood_shade.png"
+import wood_shutter from "../../assets/images/you-may-also-like/wood_shutter.png"
 const YouMayAlsoLike = () => {
 	return (
 		<div className='py-5 md:py-8 lg:py-10'>

@@ -1,8 +1,8 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link, Outlet } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
-import YouMayAlsoLike from "../components/YouMayAlsoLike";
+import Sidebar from "../components/dashboard/Sidebar";
+import YouMayAlsoLike from "../components/dashboard/YouMayAlsoLike";
 import { useState } from "react";
 
 export default function AllProductLayout() {
