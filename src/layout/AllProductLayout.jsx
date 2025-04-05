@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Link, Outlet } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
+import YouMayAlsoLike from "../components/YouMayAlsoLike";
 
 export default function AllProductLayout() {
 	return (
@@ -11,7 +12,7 @@ export default function AllProductLayout() {
 
 			<div className="flex flex-1"> {/* Navbar height offset */}
 				{/* Fixed Sidebar */}
-				<aside className="w-[240px]  border-r bg-background overflow-y-auto">
+				<aside className="w-[240px]  border-r bg-background overflow-y-auto hidden overflow-x-hidden lg:flex">
 					<div className="p-4">
 						<Link to="/" className="text-xl font-bold block mb-6">
 							HomeDecor
@@ -26,6 +27,7 @@ export default function AllProductLayout() {
 					<Outlet />
 				</div>
 			</div>
+			<YouMayAlsoLike></YouMayAlsoLike>
 
 			{/* Fixed Footer */}
 			<Footer className="ml-[240px]" />
