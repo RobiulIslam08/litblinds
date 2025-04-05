@@ -34,7 +34,7 @@ const Navbar = () => {
 		{ name: 'Shop By Need/Room', path: '/allproduct/shop-by-need' },
 		{ name: 'Shop By Features', path: '/allproduct/shop-by-features' },
 		{ name: 'Help Center', path: '/help-center' },
-		{ name: 'Find Retailer', path: '/allproduct/find-retailer' },
+		// { name: 'Find Retailer', path: '/allproduct/find-retailer' },
 	];
 
 
@@ -274,7 +274,7 @@ const Navbar = () => {
 				<div className="px-10  ">
 					<div className="flex items-center justify-between h-16">
 						{/* Desktop Menu */}
-						<div className="hidden md:flex items-center space-x-2">
+						<div className="hidden md:flex items-center space-x-5">
 							{menuItems.map((item) => (
 								<a
 									key={item.name} // Use path as unique key
