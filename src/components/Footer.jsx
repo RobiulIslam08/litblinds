@@ -8,7 +8,7 @@ import { IoMdMail } from "react-icons/io";
 const Footer = () => {
 	return (
 		<>
-			<footer className="bg-gray-100 text-gray-700 py-8 bg-cover bg-center " style={{ backgroundImage: `url(${imag})` }}>
+			<footer className="bg-[#8fd3e8] text-gray-700 py-8 bg-cover bg-center " >
 				<div className="container mx-auto px-4">
 					<div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 

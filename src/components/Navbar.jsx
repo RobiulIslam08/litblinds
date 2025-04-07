@@ -108,7 +108,7 @@ const Navbar = () => {
 				{/* middle */}
 				{/* for desktop */}
 				<div className='hidden lg:flex items-center gap-2'>
-					<FaLocationDot />
+					<FaLocationDot className='text-primary'/>
 					<p className='text-primary font-bold'>Find Retailer</p>
 				</div>
 				{/* this for mobile */}
@@ -188,15 +188,15 @@ const Navbar = () => {
 					{/* notice cart user */}
 					<div className='flex items-center lg:gap-4 gap-2'>
 						<div className='flex flex-col items-center leading-2.5'>
-							<IoNotifications />
+							<IoNotifications  className='text-primary'/>
 							<p className='text-xs hidden lg:flex'>notification</p>
 						</div>
 						<div className='flex flex-col items-center leading-2.5'>
-							<FaShoppingCart />
+							<FaShoppingCart  className='text-primary'/>
 							<p className='text-xs  hidden lg:flex'>cart</p>
 						</div>
 						<div className='flex flex-col items-center leading-2.5'>
-							<FaUser />
+							<FaUser  className='text-primary'/>
 							<p className='text-xs  hidden lg:flex'>user</p>
 						</div>
 					</div>
@@ -255,13 +255,13 @@ const Navbar = () => {
 				{/* search input */}
 				<div className='relative inline-block'>
 					<input type="text" className=' border border-[#b3b3b3] outline-none w-[130px] lg:w-[350px] rounded-md lg:py-1 lg:px-3 px-2 text-xs lg:text:md' />
-					<FaSearch className='absolute text-xs right-2 top-2 text-[#555555] ' />
+					<FaSearch className='absolute text-xs right-2 top-2 text-primary ' />
 				</div>
 				{/* call */}
 				<div className='flex gap-2 text-xs'>
 					<p>📞2547086262t </p>
 					<div className='lg:hidden flex items-center gap-2'>
-						<FaLocationDot />
+						<FaLocationDot className='text-primary'/>
 						<p className='text-primary font-bold'>Find Retailer</p>
 					</div>
 					<p className='hidden lg:flex'>100% Satisfaction</p>
