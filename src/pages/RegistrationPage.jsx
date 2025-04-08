@@ -212,12 +212,64 @@
 
 
 import { useState } from "react"
-import { Eye, EyeOff, Mail, Lock, User, CheckCircle, Github, Facebook } from "lucide-react"
+import { Eye, EyeOff, Mail, Lock, User, CheckCircle, Github, Facebook, Globe, ChevronDown, Phone } from "lucide-react"
 import { Link } from "react-router-dom"
+import { FaFacebook, FaGoogle, FaLinkedin, FaTwitter } from "react-icons/fa"
 
 
 export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false)
+  const countries = [
+    { code: 'US', name: 'United States', phone: '+1' },
+    { code: 'GB', name: 'United Kingdom', phone: '+44' },
+    { code: 'IN', name: 'India', phone: '+91' },
+    { code: 'DE', name: 'Germany', phone: '+49' },
+    { code: 'FR', name: 'France', phone: '+33' },
+    { code: 'CA', name: 'Canada', phone: '+1' },
+    { code: 'AU', name: 'Australia', phone: '+61' },
+    { code: 'BR', name: 'Brazil', phone: '+55' },
+    { code: 'CN', name: 'China', phone: '+86' },
+    { code: 'JP', name: 'Japan', phone: '+81' },
+    { code: 'RU', name: 'Russia', phone: '+7' },
+    { code: 'IT', name: 'Italy', phone: '+39' },
+    { code: 'ES', name: 'Spain', phone: '+34' },
+    { code: 'MX', name: 'Mexico', phone: '+52' },
+    { code: 'ZA', name: 'South Africa', phone: '+27' },
+    { code: 'KR', name: 'South Korea', phone: '+82' },
+    { code: 'AR', name: 'Argentina', phone: '+54' },
+    { code: 'SA', name: 'Saudi Arabia', phone: '+966' },
+    { code: 'NG', name: 'Nigeria', phone: '+234' },
+    { code: 'PK', name: 'Pakistan', phone: '+92' },
+    { code: 'ID', name: 'Indonesia', phone: '+62' },
+    { code: 'TR', name: 'Turkey', phone: '+90' },
+    { code: 'BD', name: 'Bangladesh', phone: '+880' },
+    { code: 'EG', name: 'Egypt', phone: '+20' },
+    { code: 'IR', name: 'Iran', phone: '+98' },
+    { code: 'PL', name: 'Poland', phone: '+48' },
+    { code: 'SE', name: 'Sweden', phone: '+46' },
+    { code: 'NO', name: 'Norway', phone: '+47' },
+    { code: 'FI', name: 'Finland', phone: '+358' },
+    { code: 'DK', name: 'Denmark', phone: '+45' },
+    { code: 'BE', name: 'Belgium', phone: '+32' },
+    { code: 'NL', name: 'Netherlands', phone: '+31' },
+    { code: 'CH', name: 'Switzerland', phone: '+41' },
+    { code: 'AT', name: 'Austria', phone: '+43' },
+    { code: 'NZ', name: 'New Zealand', phone: '+64' },
+    { code: 'PH', name: 'Philippines', phone: '+63' },
+    { code: 'TH', name: 'Thailand', phone: '+66' },
+    { code: 'MY', name: 'Malaysia', phone: '+60' },
+    { code: 'SG', name: 'Singapore', phone: '+65' },
+  ];
+  
+  const [selectedCountry, setSelectedCountry] = useState('')
+  const [selectedCountryCode, setSelectedCountryCode] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState('')
+
+  const handleCountryChange = (e) => {
+    const country = countries.find(c => c.code === e.target.value)
+    setSelectedCountry(country.code)
+    setSelectedCountryCode(country.phone)
+  }
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-gradient-to-br from-[#1e3b6f] via-[#2d4d87] to-[#1b2f5b] relative overflow-hidden">
@@ -315,6 +367,64 @@ export default function RegisterPage() {
                 </div>
               </div>
 
+               {/* New Country Selection Field */}
+               <div className="space-y-2">
+                <label htmlFor="country" className="block text-sm font-medium text-white/80">
+                  Country
+                </label>
+                <div className="relative rounded-lg group">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Globe className="h-5 w-5 text-white/60" />
+                  </div>
+                  <select
+                    id="country"
+                    name="country"
+                    required
+                    value={selectedCountry}
+                    onChange={handleCountryChange}
+                    className="block w-full pl-10 pr-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-white/50 focus:border-white/50 text-white cursor-pointer appearance-none"
+                  >
+                    <option value="" disabled>Select Country</option>
+                    {countries.map((country) => (
+                      <option key={country.code} value={country.code} className="bg-gray-200 text-black">
+                        {country.name} ({country.phone})
+                      </option>
+                    ))}
+                  </select>
+                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                    <ChevronDown className="h-5 w-5 text-white/60" />
+                  </div>
+                </div>
+              </div>
+
+              {/* New Phone Number Field */}
+              <div className="space-y-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-white/80">
+                  Phone Number
+                </label>
+                <div className="relative rounded-lg group">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <Phone className="h-5 w-5 text-white/60" />
+                  </div>
+                  <div className="absolute left-10 inset-y-0 flex items-center pointer-events-none">
+                    <span className="text-white/60">{selectedCountryCode}</span>
+                  </div>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autoComplete="tel"
+                    required
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    className="block w-full pl-24 pr-3 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg focus:ring-2 focus:ring-white/50 focus:border-white/50 text-white placeholder-white/50 sm:text-sm"
+                    placeholder="123 456 7890"
+                  />
+                </div>
+              </div>
+
+              
+
               <div className="space-y-2">
                 <label htmlFor="password" className="block text-sm font-medium text-white/80">
                   Password
@@ -365,8 +475,8 @@ export default function RegisterPage() {
                   />
                 </div>
               </div>
-
-              <div className="space-y-3 pt-2">
+{/* password munst contain */}
+              {/* <div className="space-y-3 pt-2">
                 <div className="text-sm font-medium text-white/80 mb-2">Password must contain:</div>
                 <div className="flex items-center text-sm text-white/80">
                   <CheckCircle className="h-4 w-4 text-white/80 mr-2" />
@@ -380,7 +490,7 @@ export default function RegisterPage() {
                   <CheckCircle className="h-4 w-4 text-white/80 mr-2" />
                   <span>At least one number</span>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-start pt-2">
                 <input
@@ -419,43 +529,32 @@ export default function RegisterPage() {
             </div>
 
             {/* Social login buttons */}
-            <div className="mt-6 grid grid-cols-3 gap-3">
-              <button
-                type="button"
-                className="w-full inline-flex justify-center py-2.5 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 backdrop-blur-sm text-sm font-medium text-white hover:bg-white/20 transition-all duration-200"
-              >
-                <Github className="h-5 w-5" />
-              </button>
-              <button
-                type="button"
-                className="w-full inline-flex justify-center py-2.5 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 backdrop-blur-sm text-sm font-medium text-white hover:bg-white/20 transition-all duration-200"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                    fill="#4285F4"
-                  />
-                  <path
-                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                    fill="#34A853"
-                  />
-                  <path
-                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                    fill="#FBBC05"
-                  />
-                  <path
-                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                    fill="#EA4335"
-                  />
-                </svg>
-              </button>
-              <button
-                type="button"
-                className="w-full inline-flex justify-center py-2.5 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 backdrop-blur-sm text-sm font-medium text-white hover:bg-white/20 transition-all duration-200"
-              >
-                <Facebook className="h-5 w-5" />
-              </button>
-            </div>
+            <div className="mt-6 grid grid-cols-4 gap-3">
+                         <button
+                           type="button"
+                           className="w-full inline-flex justify-center py-2.5 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 backdrop-blur-sm text-sm font-medium text-white hover:bg-white/20 transition-all duration-200"
+                         >
+                           <FaGoogle className="h-5 w-5" />
+                         </button>
+                         <button
+                           type="button"
+                           className="w-full inline-flex justify-center py-2.5 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 backdrop-blur-sm text-sm font-medium text-white hover:bg-white/20 transition-all duration-200"
+                         >
+                          <FaFacebook className="h-5 w-5"></FaFacebook>
+                         </button>
+                         <button
+                           type="button"
+                           className="w-full inline-flex justify-center py-2.5 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 backdrop-blur-sm text-sm font-medium text-white hover:bg-white/20 transition-all duration-200"
+                         >
+                           <FaTwitter className="h-5 w-5" />
+                         </button>
+                         <button
+                           type="button"
+                           className="w-full inline-flex justify-center py-2.5 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 backdrop-blur-sm text-sm font-medium text-white hover:bg-white/20 transition-all duration-200"
+                         >
+                           <FaLinkedin className="h-5 w-5" />
+                         </button>
+                       </div>
 
             <div className="mt-6 text-center">
               <p className="text-white/70 text-sm">
