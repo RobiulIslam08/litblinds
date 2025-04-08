@@ -12,7 +12,9 @@ import { useLocation } from 'react-router-dom';
 const Navbar = () => {
 	const location = useLocation();
 	const [selectedLanguage, setSelectedLanguage] = useState("English");
-
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	// Toggle menu visibility on click
+	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 	const languages = ["English", "Español", "Français", "Arabic"];
 
 	// for currency
@@ -34,6 +36,8 @@ const Navbar = () => {
 		{ name: 'Shop By Need/Room', path: '/allproduct/shop-by-need' },
 		{ name: 'Shop By Features', path: '/allproduct/shop-by-features' },
 		{ name: 'Help Center', path: '/help-center' },
+		{ name: 'Login', path: '/login' },
+		{ name: 'Registration', path: '/registration' },
 		// { name: 'Find Retailer', path: '/allproduct/find-retailer' },
 	];
 
@@ -212,11 +216,14 @@ const Navbar = () => {
 						</div>
 						{/* user */}
 						<div className="flex flex-col items-center leading-2.5 relative group cursor-pointer">
-							<FaUser className="text-primary" />
+							<FaUser className="text-primary" onClick={toggleMenu} />
 							<p className="text-xs hidden lg:flex">user</p>
 
 							{/* Dropdown */}
-							<div className="absolute top-8 right-0 bg-white shadow-lg border rounded-md w-32 py-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
+							<div
+								className={`absolute top-8 right-0 bg-white shadow-lg border rounded-md w-32 py-2 transition-all duration-300 z-50 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+									}`}
+							>
 								<p className="px-4 py-1 text-sm hover:bg-gray-100">Hi, Rabiul</p>
 								<p className="px-4 py-1 text-sm hover:bg-gray-100">Profile</p>
 								<p className="px-4 py-1 text-sm hover:bg-gray-100 text-red-500">Log out</p>

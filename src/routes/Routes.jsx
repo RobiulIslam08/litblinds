@@ -10,6 +10,8 @@ import PvcFlooringPage from "../pages/PvcFlooringPage";
 import ShopNeedPage from "../pages/ShopNeedPage";
 import ShopByFeaturePage from "../pages/ShopByFeaturePage";
 import HelpCenter from "../pages/HelpCenter";
+import LoginPage from "../pages/LoginPage";
+import RegisterPage from "../pages/RegistrationPage";
 
 const router = createBrowserRouter([
 	{
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
 			{
 				path:'help-center',
 				element:<HelpCenter></HelpCenter>
+			},
+			{
+				path:'login',
+				element:<LoginPage></LoginPage>
+			},
+			{
+				path:'registration',
+				element:<RegisterPage></RegisterPage>
 			}
 			
 		]
