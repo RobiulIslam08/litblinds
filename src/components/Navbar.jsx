@@ -41,67 +41,72 @@ const Navbar = () => {
 	return (
 		<div className=''>
 			{/* first part */}
-			<div className='flex justify-between items-center bg-[#eeeeee] px-3 lg:px-7 py-2'>
+			<div className='flex justify-around lg:justify-between items-center bg-[#eeeeee] lg:px-7 py-2'>
 				{/* left */}
 				{/* this for desktop */}
 				<p className='text-primary font-semibold text-xs hidden lg:flex'>Your trusted store for Home Decoration</p>
 				{/* this for mobile */}
 
 
-				{/* mobile menu button */}
-				<div className="md:hidden flex items-center">
+				{/* mobile menu button and logo */}
+				<div className='flex items-center gap-2'>
+					{/* mobile menu button */}
+					<div className="md:hidden flex items-center">
 
-					<button
-						onClick={() => setIsOpen(!isOpen)}
-						className="text-primary hover:text-blue-600  rounded-lg transition-colors"
-						aria-expanded={isOpen}
+						<button
+							onClick={() => setIsOpen(!isOpen)}
+							className="text-primary hover:text-blue-600  rounded-lg transition-colors"
+							aria-expanded={isOpen}
+						>
+							{!isOpen ? (
+								<svg
+									className="w-5 h-5"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth={2}
+										d="M4 6h16M4 12h16M4 18h16"
+									/>
+								</svg>
+
+
+							) : (
+								<svg
+									className="w-5 h-5"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth={2}
+										d="M6 18L18 6M6 6l12 12"
+									/>
+								</svg>
+							)}
+						</button>
+					</div>
+					{/* logo */}
+					<video
+						src={videoLogo} // Changed path
+						autoPlay
+						loop
+						muted
+
+
+						style={{ width: '80px', height: 'auto' }} // Explicit dimensions
+						className="w-full h-auto lg:hidden flex"
 					>
-						{!isOpen ? (
-							<svg
-								className="w-5 h-5"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth={2}
-									d="M4 6h16M4 12h16M4 18h16"
-								/>
-							</svg>
-
-
-						) : (
-							<svg
-								className="w-5 h-5"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth={2}
-									d="M6 18L18 6M6 6l12 12"
-								/>
-							</svg>
-						)}
-					</button>
+						Your browser does not support the video tag.
+					</video>
 				</div>
 
-				<video
-					src={videoLogo} // Changed path
-					autoPlay
-					loop
-					muted
 
-
-					style={{ width: '80px', height: 'auto' }} // Explicit dimensions
-					className="w-full h-auto lg:hidden flex"
-				>
-					Your browser does not support the video tag.
-				</video>
 
 
 
@@ -112,39 +117,43 @@ const Navbar = () => {
 					<p className='text-primary font-bold'>Find Retailer</p>
 				</div>
 				{/* this for mobile */}
-				{/* language */}
-				<div className="  flex lg:hidden items-center ">
 
-					<div className="relative inline-block   ">
+				{/* for language and currency */}
+				<div className='flex justify-center items-center gap-2'>
+					{/* language */}
+					<div className="  flex lg:hidden items-center ">
+
+						<div className="relative inline-block   ">
+							<select
+								value={selectedLanguage}
+								onChange={(e) => setSelectedLanguage(e.target.value)}
+								className="bg-white block appearance-none w-full text-[10px] font-semibold  border px-[8px]  text-gray-700  rounded leading-tight focus:outline-none  "
+							>
+								{languages.map((lang, index) => (
+									<option key={index} value={lang} className='font-bold'>
+										{lang}
+									</option>
+								))}
+							</select>
+						</div>
+					</div>
+
+					{/* currency */}
+					<div className=" flex lg:hidden items-center  ">
+
 						<select
-							value={selectedLanguage}
-							onChange={(e) => setSelectedLanguage(e.target.value)}
-							className="bg-white block appearance-none w-full text-[10px] font-semibold  border px-[8px]  text-gray-700  rounded leading-tight focus:outline-none  "
+							value={currency}
+							onChange={(e) => setCurrency(e.target.value)}
+							className="block appearance-none w-full bg-white border text-[10px] font-semibold text-gray-700  px-[8px] rounded leading-tight focus:outline-none  "
 						>
-							{languages.map((lang, index) => (
-								<option key={index} value={lang} className='font-bold'>
-									{lang}
+							{currencies.map((cur, index) => (
+								<option key={index} value={cur} className='font-bold'>
+									{cur}
 								</option>
 							))}
 						</select>
+
 					</div>
-				</div>
-
-				{/* currency */}
-				<div className=" flex lg:hidden items-center  ">
-
-					<select
-						value={currency}
-						onChange={(e) => setCurrency(e.target.value)}
-						className="block appearance-none w-full bg-white border text-[10px] font-semibold text-gray-700  px-[8px] rounded leading-tight focus:outline-none  "
-					>
-						{currencies.map((cur, index) => (
-							<option key={index} value={cur} className='font-bold'>
-								{cur}
-							</option>
-						))}
-					</select>
-
 				</div>
 
 
@@ -187,18 +196,33 @@ const Navbar = () => {
 
 					{/* notice cart user */}
 					<div className='flex items-center lg:gap-4 gap-2'>
-						<div className='flex flex-col items-center leading-2.5'>
-							<IoNotifications className='text-primary' />
-							<p className='text-xs hidden lg:flex'>notification</p>
+						<div className='flex flex-col items-center leading-2.5 relative'>
+							<div>
+								<IoNotifications className='text-primary' />
+								<p className='absolute text-white bg-red-400 font-bold p-[1.5px] rounded-full  text-[10px] right-0 bottom-3'>4</p>
+							</div>
+							<p className='text-xs  hidden lg:flex'>Notification</p>
 						</div>
-						<div className='flex flex-col items-center leading-2.5'>
-							<FaShoppingCart className='text-primary' />
+						<div className='flex flex-col items-center leading-2.5 relative'>
+							<div>
+								<FaShoppingCart className='text-primary' />
+								<p className='absolute text-white bg-red-400 font-bold p-[1.5px] rounded-full  text-[10px] right-0 bottom-3'>6</p>
+							</div>
 							<p className='text-xs  hidden lg:flex'>cart</p>
 						</div>
-						<div className='flex flex-col items-center leading-2.5'>
-							<FaUser className='text-primary' />
-							<p className='text-xs  hidden lg:flex'>user</p>
+						{/* user */}
+						<div className="flex flex-col items-center leading-2.5 relative group cursor-pointer">
+							<FaUser className="text-primary" />
+							<p className="text-xs hidden lg:flex">user</p>
+
+							{/* Dropdown */}
+							<div className="absolute top-8 right-0 bg-white shadow-lg border rounded-md w-32 py-2 opacity-0 group-hover:opacity-100 group-hover:visible invisible transition-all duration-300 z-50">
+								<p className="px-4 py-1 text-sm hover:bg-gray-100">Hi, Rabiul</p>
+								<p className="px-4 py-1 text-sm hover:bg-gray-100">Profile</p>
+								<p className="px-4 py-1 text-sm hover:bg-gray-100 text-red-500">Log out</p>
+							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -213,22 +237,22 @@ const Navbar = () => {
 
 			{/* Mobile Menu */}
 			{/* Mobile Menu */}
-{isOpen && (
-  <div className="md:hidden absolute top-16 left-0 w-[75%]  bg-white  z-30 overflow-y-auto animate-slide-in-left">
-    <div className="py-1 space-y-2 ">
-      {menuItems.map((item) => (
-        <a
-          key={item.path}
-          href={item.path}
-          className="block text-gray-700 text-base font-semibold px-4 py-2 rounded hover:bg-gray-100 transition duration-200 border-b"
-          onClick={() => setIsOpen(false)}
-        >
-          {item.name}
-        </a>
-      ))}
-    </div>
-  </div>
-)}
+			{isOpen && (
+				<div className="md:hidden absolute top-16 left-0 w-[75%]  bg-white  z-30 overflow-y-auto animate-slide-in-left">
+					<div className="py-1 space-y-2 ">
+						{menuItems.map((item) => (
+							<a
+								key={item.path}
+								href={item.path}
+								className="block text-gray-700 text-base font-semibold px-4 py-2 rounded hover:bg-gray-100 transition duration-200 border-b"
+								onClick={() => setIsOpen(false)}
+							>
+								{item.name}
+							</a>
+						))}
+					</div>
+				</div>
+			)}
 
 
 
@@ -253,6 +277,11 @@ const Navbar = () => {
 
 
 				</div>
+				{/* find retailer */}
+				<div className='lg:hidden flex items-center gap-2'>
+					<FaLocationDot className='text-primary text-xs' />
+					<p className='text-primary font-bold text-xs'>Find Retailer</p>
+				</div>
 				{/* search input */}
 				<div className='relative inline-block'>
 					<input type="text" className=' border border-[#b3b3b3] outline-none w-[130px] lg:w-[350px] rounded-md lg:py-1 lg:px-3 px-2 text-xs lg:text:md' />
@@ -261,10 +290,7 @@ const Navbar = () => {
 				{/* call */}
 				<div className='flex gap-2 text-xs'>
 					<div className='flex items-center justify-center gap-[2px]'><IoCall className='text-primary' /><p> 2547086262t</p> </div>
-					<div className='lg:hidden flex items-center gap-2'>
-						<FaLocationDot className='text-primary' />
-						<p className='text-primary font-bold'>Find Retailer</p>
-					</div>
+
 					<p className='hidden lg:flex'>100% Satisfaction</p>
 					<p className='hidden lg:flex'>Reasonable price</p>
 				</div>

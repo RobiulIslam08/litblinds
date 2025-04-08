@@ -2,6 +2,21 @@
 .text-primary {
   @apply text-[#1e3b6f];
 }
+.text-blue-color {
+  @apply text-[#1b2f5b];
+}
+.text-light-gray{
+  @apply text-[#eeeeee]
+}
+.bg-primary {
+  @apply bg-[#1e3b6f];
+}
+.bg-blue {
+  @apply bg-[#1b2f5b];
+}
+.bg-light-gray{
+  @apply bg-[#eeeeee]
+}
 .swiper-button-next,
 .swiper-button-prev {
   font-size: 11px; /* Controls arrow size */

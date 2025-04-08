@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import imag from "../assets/images/footer/ghy_5.jpg"
+
 import { FaFacebook, FaHeadset, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
@@ -8,7 +8,7 @@ import { IoMdMail } from "react-icons/io";
 const Footer = () => {
 	return (
 		<>
-			<footer className="bg-[#8fd3e8] text-gray-700 py-8 bg-cover bg-center " >
+			<footer className="bg-light-gray text-gray-700 py-8 bg-cover bg-center " >
 				<div className="container mx-auto px-4">
 					<div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
