@@ -62,6 +62,7 @@
 
 import React from 'react';
 import { FaEye, FaHeart, FaRandom, FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
   const { 
@@ -82,11 +83,13 @@ const ProductCard = ({ product }) => {
   return (
     <div className="mb-4">
       <div className="relative group lg:w-[220px] lg:h-[255px] w-[140px] h-[140px]">
-        <img
+       <Link to="/window-blinds-singlepage">
+       <img
           src={image}
           alt={title}
           className="w-full h-full object-cover"
         />
+       </Link>
         {discount > 0 && (
           <p className='bg-white text-black p-2 absolute top-2 left-2 rounded-md font-semibold'>
             {discount}%
