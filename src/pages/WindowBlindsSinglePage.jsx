@@ -32,7 +32,7 @@ const WindowBlindsSinglePage = () => {
 			{/* Right Side */}
 			<div className='w-full lg:w-[70%] '>
 				{/* price section*/}
-				<div className='border border-gray-500 rounded-md flex flex-col lg:flex-row items-center gap-10 p-4'>
+				<div className='border border-gray-400 rounded-md flex flex-col lg:flex-row items-center gap-10 p-4'>
 					{/* add to cart, color for this  */}
 					<div className='w-full lg:w-[60%]'>
 						{/* star */}
@@ -96,6 +96,101 @@ const WindowBlindsSinglePage = () => {
 							</div>
 						</div>
 						<button className='bg-red-500 hover:bg-red-600 w-full rounded-md my-3 text-white font-bold py-2'>Customize & Buy</button>
+					</div>
+
+				</div>
+
+				{/* slect color, size, features, warrenty option */}
+				<div className='border p-4 h-screen border-gray-400 mt-3'>
+					{/* select color */}
+					<div>
+						<button className='py-2 font-semibold text-left w-full text-white bg-gray-800 px-5'>Select Color</button>
+						<p className='text-sm py-3'>Classic Collection | Add:$ 5</p>
+						<hr className='text-gray-400 pb-3' />
+						{/* first six color card */}
+						<div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 justify-items-center'>
+						
+							{/* color item */}
+							<div className='w-28 h-28'>
+								<p className='bg-[#f5f5f0] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>White Horse</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-28 h-28'>
+								<p className='bg-[#d1cbb8] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Polar Bear</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-28 h-28'>
+								<p className='bg-[#6b707a] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Seal Gray</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-28 h-28'>
+								<p className='bg-[#54565a] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>White Gray</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-28 h-28'>
+								<p className='bg-[#454449] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Black</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-28 h-28'>
+								<p className='bg-[#4d423f] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Beaver Tail</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+						
+						</div>
+
+							{/* first six color card */}
+							<div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 justify-items-center'>
+						
+						{/* color item */}
+						<div className='w-28 h-28'>
+							<p className='bg-[#f5f5f0] w-full h-full border border-gray-300'></p>
+							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>White Horse</p>
+							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+						</div>
+						{/* color item */}
+						<div className='w-28 h-28'>
+							<p className='bg-[#d1cbb8] w-full h-full border border-gray-300'></p>
+							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Polar Bear</p>
+							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+						</div>
+						{/* color item */}
+						<div className='w-28 h-28'>
+							<p className='bg-[#6b707a] w-full h-full border border-gray-300'></p>
+							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Seal Gray</p>
+							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+						</div>
+						{/* color item */}
+						<div className='w-28 h-28'>
+							<p className='bg-[#54565a] w-full h-full border border-gray-300'></p>
+							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>White Gray</p>
+							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+						</div>
+						{/* color item */}
+						<div className='w-28 h-28'>
+							<p className='bg-[#454449] w-full h-full border border-gray-300'></p>
+							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Black</p>
+							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+						</div>
+						{/* color item */}
+						<div className='w-28 h-28'>
+							<p className='bg-[#4d423f] w-full h-full border border-gray-300'></p>
+							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Beaver Tail</p>
+							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+						</div>
+					
+					</div>
+
 					</div>
 
 				</div>
