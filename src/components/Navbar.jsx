@@ -7,7 +7,7 @@ import { FaLocationDot, FaUser } from 'react-icons/fa6';
 import { IoCall, IoNotifications } from 'react-icons/io5';
 import videoLogo from "../assets/video.mp4"
 import Discount from './home/Discount';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
 	const location = useLocation();
@@ -36,8 +36,8 @@ const Navbar = () => {
 		{ name: 'Shop By Need/Room', path: '/allproduct/shop-by-need' },
 		{ name: 'Shop By Features', path: '/allproduct/shop-by-features' },
 		{ name: 'Help Center', path: '/help-center' },
-		{ name: 'Login', path: '/login' },
-		{ name: 'Registration', path: '/registration' },
+		// { name: 'Login', path: '/login' },
+		// { name: 'Registration', path: '/registration' },
 		// { name: 'Find Retailer', path: '/allproduct/find-retailer' },
 	];
 
@@ -203,9 +203,9 @@ const Navbar = () => {
 						<div className='flex flex-col items-center leading-2.5 relative'>
 							<div>
 								<IoNotifications className='text-primary' />
-								<p className='absolute text-white bg-red-400 font-bold p-[1.5px] rounded-full  text-[10px] right-0 bottom-3'>4</p>
+								<p className='absolute text-white bg-red-400 font-bold p-[1.5px] rounded-full  text-[10px] right-1 bottom-3'>4</p>
 							</div>
-							<p className='text-xs  hidden lg:flex'>Notification</p>
+							<p className='text-xs  hidden lg:flex'>Notice</p>
 						</div>
 						<div className='flex flex-col items-center leading-2.5 relative'>
 							<div>
@@ -225,7 +225,8 @@ const Navbar = () => {
 									}`}
 							>
 								<p className="px-4 py-1 text-sm hover:bg-gray-100">Hi, Rabiul</p>
-								<p className="px-4 py-1 text-sm hover:bg-gray-100">Profile</p>
+								<p className="px-4 py-1 text-sm hover:bg-gray-100"><Link to="login">Login</Link></p>
+								<p className="px-4 py-1 text-sm hover:bg-gray-100"><Link to="registration">Register</Link></p>
 								<p className="px-4 py-1 text-sm hover:bg-gray-100 text-red-500">Log out</p>
 							</div>
 						</div>
