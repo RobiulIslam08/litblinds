@@ -8,6 +8,12 @@
 .text-light-gray{
   @apply text-[#eeeeee]
 }
+.text-red{
+  @apply text-[#d80505]
+}
+.text-orange{
+  @apply text-[#ff831e]
+}
 .bg-primary {
   @apply bg-[#1e3b6f];
 }
