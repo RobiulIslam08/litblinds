@@ -2,6 +2,8 @@ import { useState } from 'react';
 import ProductInfo from './productTabs/ProductInfo';
 import ReviewSections from './productTabs/ReviewSections';
 import ShippingSection from './productTabs/ShippingSection';
+import Guide from './productTabs/Guide';
+import Sample from './productTabs/Sample';
 
 
 
@@ -45,19 +47,12 @@ const ProductTabs = () => {
 				)}
 
 				{activeTab === 'guide' && (
-					<div>
-						<h2 className="text-xl font-bold mb-4">Measurement Guide</h2>
-						<p>Step-by-step installation instructions...</p>
-					</div>
+					
+					<Guide></Guide>
 				)}
 
 				{activeTab === 'samples' && (
-					<div>
-						<h2 className="text-xl font-bold mb-4">Free Samples</h2>
-						<button className="bg-orange-500 text-white px-4 py-2 rounded">
-							Order Free Samples
-						</button>
-					</div>
+					<Sample></Sample>
 				)}
 
 				{activeTab === 'shipping' && (
