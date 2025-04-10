@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import img1 from '../assets/images/windowBlindsSinglePage/82_0.jpg';
 import img2 from '../assets/images/windowBlindsSinglePage/82_1.jpg';
-import { FaHeart, FaShareAlt, FaStar } from 'react-icons/fa';
+import { FaHeart, FaPlayCircle, FaShareAlt, FaStar } from 'react-icons/fa';
 import { CiHeart } from 'react-icons/ci';
 import insideImage from '../assets/images/windowBlindsSinglePage/inside.jpg'
 import defaultWidth from '../assets/images/windowBlindsSinglePage/Default_Width.jpg'
 import defaultHeight from '../assets/images/windowBlindsSinglePage/Default_Height.jpg'
 import QuantityCounter from '../components/QuantityCounter';
+import lifeStyleimage1 from '../assets/images/windowBlindsSinglePage/lifeStyle1.jpg'
+import lifeStyleimage2 from '../assets/images/windowBlindsSinglePage/lifeStyle2.jpg'
+import lifeStyleimage3 from '../assets/images/windowBlindsSinglePage/lifeStyle3.jpg'
 const WindowBlindsSinglePage = () => {
 	const [selectedImg, setSelectedImg] = useState(img1);
 
@@ -130,7 +133,7 @@ const WindowBlindsSinglePage = () => {
 				<div className='border p-4  md:h-[1800px] border-gray-400 mt-3'>
 					{/* select color */}
 					<div>
-						<button className='text-xs py-2 font-semibold text-left w-full text-white bg-[#2c2c2c] px-5'>Select Color</button>
+						<button className='md:text-base text-xs py-2 font-semibold text-left w-full text-white bg-[#2c2c2c] px-5'>Select Color</button>
 						<p className='text-sm py-3'>Classic Collection | Add:$ 5</p>
 						<hr className='text-gray-400 pb-3' />
 						{/* first six color card */}
@@ -353,6 +356,52 @@ const WindowBlindsSinglePage = () => {
 						<p className='text-primary text-sm mt-3 md:mt-4 lg:mt-5'>Room Name</p>
 						<hr className='text-gray-400 ' />
 						<input type="text" className='border border-gray-400 rounded-md outline-none px-3 py-1 mt-2 md:mt-3' />
+					</div>
+
+					{/* Select Features */}
+					<div>
+						<button className='text-xs md:text-base py-2 font-semibold text-left w-full text-white bg-[#2c2c2c] px-5 mt-3 md:mt-4'>Select Features</button>
+						<p className='text-primary text-sm mt-3 md:mt-4 lg:mt-5'>Life Style</p>
+						<hr className='text-gray-400 ' />
+						{/* life style 3 card */}
+						<div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mt-3 md:mt-4 '>
+							{/* one */}
+							<div>
+								<img src={lifeStyleimage1} alt="" className='w-full' />
+								<div className='flex justify-between items-center'>
+									<div className='flex flex-col'>
+										<p className='font-semibold'>Chain Guard</p>
+										<p>$ 2</p>
+									</div>
+									<FaPlayCircle className='border border-blue-500 px-1 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 transition ease-in-out h-7 w-7  cursor-pointer text-white rounded-md ' />
+
+								</div>
+							</div>
+							{/* two*/}
+							<div>
+								<img src={lifeStyleimage2} alt="" className='w-full' />
+								<div className='flex justify-between items-center'>
+									<div className='flex flex-col'>
+										<p className='font-semibold'>Cordless Lift</p>
+										<p>$ 2</p>
+									</div>
+									<FaPlayCircle className='border border-blue-500 px-1 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 transition ease-in-out h-7 w-7  cursor-pointer text-white rounded-md ' />
+								</div>
+							</div>
+							{/* three */}
+							<div>
+								<img src={lifeStyleimage3} alt="" className='w-full' />
+								<div className='flex justify-between items-center'>
+									<div className='flex flex-col'>
+										<p className='font-semibold'>Motorization</p>
+										<p>$ 3</p>
+									</div>
+									<FaPlayCircle className='border border-blue-500 px-1 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 transition ease-in-out h-7 w-7  cursor-pointer text-white rounded-md ' />
+
+								</div>
+							</div>
+						</div>
+
 					</div>
 
 
