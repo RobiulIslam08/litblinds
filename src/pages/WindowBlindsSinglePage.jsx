@@ -10,6 +10,8 @@ import QuantityCounter from '../components/QuantityCounter';
 import lifeStyleimage1 from '../assets/images/windowBlindsSinglePage/lifeStyle1.jpg'
 import lifeStyleimage2 from '../assets/images/windowBlindsSinglePage/lifeStyle2.jpg'
 import lifeStyleimage3 from '../assets/images/windowBlindsSinglePage/lifeStyle3.jpg'
+import Headrail from '../components/WindowBlindsSinglePage/Headrail';
+
 const WindowBlindsSinglePage = () => {
 	const [selectedImg, setSelectedImg] = useState(img1);
 
@@ -130,7 +132,7 @@ const WindowBlindsSinglePage = () => {
 				</div>
 
 				{/* slect color, size, features, warrenty option */}
-				<div className='border p-4  md:h-[1800px] border-gray-400 mt-3'>
+				<div className='border p-4   border-gray-400 mt-3'>
 					{/* select color */}
 					<div>
 						<button className='md:text-base text-xs py-2 font-semibold text-left w-full text-white bg-[#2c2c2c] px-5'>Select Color</button>
@@ -364,7 +366,7 @@ const WindowBlindsSinglePage = () => {
 						<p className='text-primary text-sm mt-3 md:mt-4 lg:mt-5'>Life Style</p>
 						<hr className='text-gray-400 ' />
 						{/* life style 3 card */}
-						<div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mt-3 md:mt-4 '>
+						<div className='grid grid-cols-2 lg:grid-cols-3 gap-5 mt-3 md:mt-4 '>
 							{/* one */}
 							<div>
 								<img src={lifeStyleimage1} alt="" className='w-full' />
@@ -403,6 +405,9 @@ const WindowBlindsSinglePage = () => {
 						</div>
 
 					</div>
+
+					{/* headrail option */}
+					<Headrail></Headrail>
 
 
 
