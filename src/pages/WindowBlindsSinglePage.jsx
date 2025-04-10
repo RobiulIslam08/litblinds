@@ -3,7 +3,7 @@ import img1 from '../assets/images/windowBlindsSinglePage/82_0.jpg';
 import img2 from '../assets/images/windowBlindsSinglePage/82_1.jpg';
 import { FaHeart, FaShareAlt, FaStar } from 'react-icons/fa';
 import { CiHeart } from 'react-icons/ci';
-
+import insideImage from '../assets/images/windowBlindsSinglePage/inside.jpg'
 const WindowBlindsSinglePage = () => {
 	const [selectedImg, setSelectedImg] = useState(img1);
 
@@ -101,96 +101,132 @@ const WindowBlindsSinglePage = () => {
 				</div>
 
 				{/* slect color, size, features, warrenty option */}
-				<div className='border p-4 h-screen border-gray-400 mt-3'>
+				<div className='border p-4 h-[1900px] md:h-[1200px] border-gray-400 mt-3'>
 					{/* select color */}
 					<div>
-						<button className='py-2 font-semibold text-left w-full text-white bg-gray-800 px-5'>Select Color</button>
+						<button className='text-xs py-2 font-semibold text-left w-full text-white bg-[#2c2c2c] px-5'>Select Color</button>
 						<p className='text-sm py-3'>Classic Collection | Add:$ 5</p>
 						<hr className='text-gray-400 pb-3' />
 						{/* first six color card */}
-						<div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 justify-items-center'>
-						
+						<div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-items-center space-y-20'>
+
 							{/* color item */}
-							<div className='w-28 h-28'>
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
 								<p className='bg-[#f5f5f0] w-full h-full border border-gray-300'></p>
 								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>White Horse</p>
 								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
 							</div>
 							{/* color item */}
-							<div className='w-28 h-28'>
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
 								<p className='bg-[#d1cbb8] w-full h-full border border-gray-300'></p>
 								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Polar Bear</p>
 								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
 							</div>
 							{/* color item */}
-							<div className='w-28 h-28'>
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
 								<p className='bg-[#6b707a] w-full h-full border border-gray-300'></p>
 								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Seal Gray</p>
 								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
 							</div>
 							{/* color item */}
-							<div className='w-28 h-28'>
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
 								<p className='bg-[#54565a] w-full h-full border border-gray-300'></p>
 								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>White Gray</p>
 								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
 							</div>
 							{/* color item */}
-							<div className='w-28 h-28'>
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
 								<p className='bg-[#454449] w-full h-full border border-gray-300'></p>
 								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Black</p>
 								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
 							</div>
 							{/* color item */}
-							<div className='w-28 h-28'>
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
 								<p className='bg-[#4d423f] w-full h-full border border-gray-300'></p>
 								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Beaver Tail</p>
 								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
 							</div>
-						
+
 						</div>
 
-							{/* first six color card */}
-							<div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 justify-items-center'>
-						
-						{/* color item */}
-						<div className='w-28 h-28'>
-							<p className='bg-[#f5f5f0] w-full h-full border border-gray-300'></p>
-							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>White Horse</p>
-							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+						{/* second six color card */}
+						<p className='text-sm py-3'>Classic Collection | Add:$ 5</p>
+						<hr className='text-gray-400 pb-3' />
+						<div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-items-center space-y-20'>
+
+							{/* color item */}
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
+								<p className='bg-[#cfcbc8] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Sea Salt</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
+								<p className='bg-[#b2a7a6] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Gray Salt</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
+								<p className='bg-[#bdb7b3] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Pabble</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
+								<p className='bg-[#89817d] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Grabbel</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
+								<p className='bg-[#88807a] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Stone</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+							{/* color item */}
+							<div className='w-[100px] h-[100px] md:w-28 md:h-28'>
+								<p className='bg-[#6e6362] w-full h-full border border-gray-300'></p>
+								<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Rock Salt</p>
+								<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
+							</div>
+
 						</div>
-						{/* color item */}
-						<div className='w-28 h-28'>
-							<p className='bg-[#d1cbb8] w-full h-full border border-gray-300'></p>
-							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Polar Bear</p>
-							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
-						</div>
-						{/* color item */}
-						<div className='w-28 h-28'>
-							<p className='bg-[#6b707a] w-full h-full border border-gray-300'></p>
-							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Seal Gray</p>
-							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
-						</div>
-						{/* color item */}
-						<div className='w-28 h-28'>
-							<p className='bg-[#54565a] w-full h-full border border-gray-300'></p>
-							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>White Gray</p>
-							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
-						</div>
-						{/* color item */}
-						<div className='w-28 h-28'>
-							<p className='bg-[#454449] w-full h-full border border-gray-300'></p>
-							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Black</p>
-							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
-						</div>
-						{/* color item */}
-						<div className='w-28 h-28'>
-							<p className='bg-[#4d423f] w-full h-full border border-gray-300'></p>
-							<p className='text-xs text-primary font-semibold mt-1 mb-2 text-center'>Beaver Tail</p>
-							<button className='text-[#fd5d00] px-3 text-xs py-[2px] border border-gray-400 w-full'>Free Sample</button>
-						</div>
-					
+
+
+
+
 					</div>
+					{/* select size,mount type and quality */}
+					<div>
+						{/* button */}
+						<div className='flex items-center justify-between py-2 font-semibold text-left w-full text-white bg-[#2c2c2c] px-5'>
+							<p className='text-xs md:text-lg'>Select Size, Mount Type & Quality</p>
+							<div className='flex items-center gap-1 justify-center'>
+								<p className='text-xs md:text-lg'>W:18"</p>
+								<p className='text-xs md:text-lg'>H:24"</p>
+							</div>
+						</div>
+						<p className='text-primary text-sm mt-3 md:mt-4 lg:mt-5'>Mount Type</p>
+						<hr  className='text-gray-400 '/>
+						{/* inside, outside and text */}
+						<div className='flex flex-col lg:flex-row justify-center gap-7 mt-2 lg:mt-3'>
+							<div className='flex items-center justify-center gap-2 w-[50%]'>
+								{/* inside */}
+								<div>
+									<img src={insideImage} alt="insideImage"  className='' />
+									<p className='text-center text-primary text-sm'>Inside</p>
+								</div>
+								{/* outside */}
+								<div>
+									<img src={insideImage} alt="outsitedImage"  srcset="" className='' />
+									<p className='text-center text-primary text-sm'>Outside</p>
+								</div>
+							</div>
+							{/* right side text */}
+							<p className='w-[50%] text-sm'><span className='font-bold text-xs'>NOTE:</span> Inside mounted blackout shades will have light gaps coming into the room from the edges of the shade. Please order outside mounted blackout shades if you prefer a higher level of blackout.</p>
 
+						</div>
 					</div>
 
 				</div>
