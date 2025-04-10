@@ -6,6 +6,7 @@ import { CiHeart } from 'react-icons/ci';
 import insideImage from '../assets/images/windowBlindsSinglePage/inside.jpg'
 import defaultWidth from '../assets/images/windowBlindsSinglePage/Default_Width.jpg'
 import defaultHeight from '../assets/images/windowBlindsSinglePage/Default_Height.jpg'
+import QuantityCounter from '../components/QuantityCounter';
 const WindowBlindsSinglePage = () => {
 	const [selectedImg, setSelectedImg] = useState(img1);
 
@@ -339,7 +340,22 @@ const WindowBlindsSinglePage = () => {
 
 					</div>
 
-					
+					{/* quantity */}
+					<div>
+						<p className='text-primary text-sm mt-3 md:mt-4 lg:mt-5'>Quantity</p>
+						<hr className='text-gray-400 ' />
+						<QuantityCounter></QuantityCounter>
+
+					</div>
+
+					{/* Room Name */}
+					<div>
+						<p className='text-primary text-sm mt-3 md:mt-4 lg:mt-5'>Room Name</p>
+						<hr className='text-gray-400 ' />
+						<input type="text" className='border border-gray-400 rounded-md outline-none px-3 py-1 mt-2 md:mt-3' />
+					</div>
+
+
 
 				</div>
 
