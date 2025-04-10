@@ -11,6 +11,7 @@ import lifeStyleimage1 from '../assets/images/windowBlindsSinglePage/lifeStyle1.
 import lifeStyleimage2 from '../assets/images/windowBlindsSinglePage/lifeStyle2.jpg'
 import lifeStyleimage3 from '../assets/images/windowBlindsSinglePage/lifeStyle3.jpg'
 import Headrail from '../components/WindowBlindsSinglePage/Headrail';
+import RollPositon from '../components/WindowBlindsSinglePage/RollPositon';
 
 const WindowBlindsSinglePage = () => {
 	const [selectedImg, setSelectedImg] = useState(img1);
@@ -408,6 +409,9 @@ const WindowBlindsSinglePage = () => {
 
 					{/* headrail option */}
 					<Headrail></Headrail>
+
+					{/* roll position */}
+					<RollPositon></RollPositon>
 
 
 
