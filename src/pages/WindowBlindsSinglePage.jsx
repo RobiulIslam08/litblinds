@@ -1,11 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import img1 from '../assets/images/windowBlindsSinglePage/82_0.jpg';
 import img2 from '../assets/images/windowBlindsSinglePage/82_1.jpg';
 import { FaHeart, FaShareAlt, FaStar } from 'react-icons/fa';
 import { CiHeart } from 'react-icons/ci';
 import insideImage from '../assets/images/windowBlindsSinglePage/inside.jpg'
+import defaultWidth from '../assets/images/windowBlindsSinglePage/Default_Width.jpg'
+import defaultHeight from '../assets/images/windowBlindsSinglePage/Default_Height.jpg'
 const WindowBlindsSinglePage = () => {
 	const [selectedImg, setSelectedImg] = useState(img1);
+
+	// Add these states at the top of your component
+	const [wholeInches, setWholeInches] = useState(15);
+	const [fraction, setFraction] = useState(0);
+	const [totalCm, setTotalCm] = useState('');
+
+	const [wholeInchesHeight, setWholeInchesHeight] = useState(15);
+	const [fractionHeight, setFractionHeight] = useState(0);
+	const [totalCmHeight, setTotalCmHeight] = useState('');
+
+	// Conversion function for width
+	useEffect(() => {
+		const totalInches = wholeInches + fraction;
+		const cm = (totalInches * 2.54).toFixed(1);
+		setTotalCm(cm);
+	}, [wholeInches, fraction]);
+
+	// Conversion function for height
+	useEffect(() => {
+		const totalInches = wholeInchesHeight + fractionHeight;
+		const cm = (totalInches * 2.54).toFixed(1);
+		setTotalCmHeight(cm);
+	}, [wholeInchesHeight, fractionHeight]);
 
 	return (
 		<div className='flex flex-col lg:flex-row items-center justify-center gap-8 my-3 lg:my-5'>
@@ -101,7 +126,7 @@ const WindowBlindsSinglePage = () => {
 				</div>
 
 				{/* slect color, size, features, warrenty option */}
-				<div className='border p-4 h-[1900px] md:h-[1200px] border-gray-400 mt-3'>
+				<div className='border p-4  md:h-[1800px] border-gray-400 mt-3'>
 					{/* select color */}
 					<div>
 						<button className='text-xs py-2 font-semibold text-left w-full text-white bg-[#2c2c2c] px-5'>Select Color</button>
@@ -207,27 +232,114 @@ const WindowBlindsSinglePage = () => {
 								<p className='text-xs md:text-lg'>H:24"</p>
 							</div>
 						</div>
+						{/* mount type */}
 						<p className='text-primary text-sm mt-3 md:mt-4 lg:mt-5'>Mount Type</p>
-						<hr  className='text-gray-400 '/>
+						<hr className='text-gray-400 ' />
 						{/* inside, outside and text */}
-						<div className='flex flex-col lg:flex-row justify-center gap-7 mt-2 lg:mt-3'>
-							<div className='flex items-center justify-center gap-2 w-[50%]'>
+						<div className='flex flex-col lg:flex-row justify-center gap-2 lg:gap-7 mt-2 lg:mt-3'>
+							<div className='flex items-center justify-center gap-2 w-full lg:w-[50%]'>
 								{/* inside */}
 								<div>
-									<img src={insideImage} alt="insideImage"  className='' />
+									<img src={insideImage} alt="insideImage" className='' />
 									<p className='text-center text-primary text-sm'>Inside</p>
 								</div>
 								{/* outside */}
 								<div>
-									<img src={insideImage} alt="outsitedImage"  srcset="" className='' />
+									<img src={insideImage} alt="outsitedImage" srcset="" className='' />
 									<p className='text-center text-primary text-sm'>Outside</p>
 								</div>
 							</div>
 							{/* right side text */}
-							<p className='w-[50%] text-sm'><span className='font-bold text-xs'>NOTE:</span> Inside mounted blackout shades will have light gaps coming into the room from the edges of the shade. Please order outside mounted blackout shades if you prefer a higher level of blackout.</p>
+							<p className='w-full lg:w-[50%] text-sm'><span className='font-bold text-xs'>NOTE:</span> Inside mounted blackout shades will have light gaps coming into the room from the edges of the shade. Please order outside mounted blackout shades if you prefer a higher level of blackout.</p>
 
 						</div>
+
+
+						{/* Enter Measurements */}
+						<p className='text-primary text-sm mt-5 md:mt-7 lg:mt-9'>Enter Measurements</p>
+						<hr className='text-gray-400 ' />
+						<p className='font-bold transition ease-in-out hover:text-blue-600 mt-3 lg:mt-4 cursor-pointer duration-300'>Tip: Measure & Install</p>
+						<div className='flex justify-between items-center gap-10'>
+							<div className='flex flex-col lg:flex-row gap-2 items-center justify-between'>
+								{/* imagge */}
+								<div>
+									<img src={defaultWidth} alt="" className='lg:w-[200px] w-full' />
+								</div>
+								{/* width */}
+								<div className="ml-4">
+									<div className="flex flex-col  gap-2">
+										<p className='text-sm text-primary'>Width (inches)</p>
+										{/* Whole inches dropdown */}
+										<select
+											value={wholeInches}
+											onChange={(e) => setWholeInches(Number(e.target.value))}
+											className="border p-1 rounded-md w-24 lg:w-40"
+										>
+											{Array.from({ length: 129 }, (_, i) => 15 + i).map((num) => (
+												<option key={num} value={num}>{num}"</option>
+											))}
+										</select>
+
+										{/* Fraction dropdown */}
+										<select
+											value={fraction}
+											onChange={(e) => setFraction(Number(e.target.value))}
+											className="border p-1 rounded-md w-24 lg:w-40"
+										>
+											{[0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875].map((frac) => (
+												<option key={frac} value={frac}>
+													{frac === 0 ? '0' : `${(frac * 8).toFixed(0)}/8`}
+												</option>
+											))}
+										</select>
+
+										<span className="text-sm font-bold text-primary">Size CM: {totalCm}</span>
+									</div>
+								</div>
+							</div>
+							<div className='flex flex-col lg:flex-row gap-2 items-center justify-between'>
+								{/* imagge */}
+								<div>
+									<img src={defaultHeight} alt="" className='lg:w-[200px] md:w-full' />
+								</div>
+								{/* height */}
+								<div className="ml-4">
+									<div className="flex flex-col  gap-2">
+										<p className='text-sm text-primary'>Width (inches)</p>
+										{/* Whole inches dropdown */}
+										<select
+											value={wholeInchesHeight}
+											onChange={(e) => setWholeInchesHeight(Number(e.target.value))}
+											className="border p-1 rounded-md w-24 lg:w-40"
+										>
+											{Array.from({ length: 129 }, (_, i) => 15 + i).map((num) => (
+												<option key={num} value={num}>{num}"</option>
+											))}
+										</select>
+
+										{/* Fraction dropdown */}
+										<select
+											value={fractionHeight}
+											onChange={(e) => setFractionHeight(Number(e.target.value))}
+											className="border p-1 rounded-md w-24 lg:w-40"
+										>
+											{[0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875].map((frac) => (
+												<option key={frac} value={frac}>
+													{frac === 0 ? '0' : `${(frac * 8).toFixed(0)}/8`}
+												</option>
+											))}
+										</select>
+
+										<span className="text-sm font-bold text-primary">Size CM: {totalCmHeight}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
 					</div>
+
+					
 
 				</div>
 
