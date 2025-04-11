@@ -386,7 +386,7 @@ export default function LoginPage() {
                 type="button"
                 className="w-full inline-flex justify-center py-2.5 px-4 border border-white/20 rounded-lg shadow-sm bg-white/10 backdrop-blur-sm text-sm font-medium text-white hover:bg-white/20 transition-all duration-200"
               >
-               <FaFacebook className="h-5 w-5"></FaFacebook>
+                <FaFacebook className="h-5 w-5"></FaFacebook>
               </button>
               <button
                 type="button"
@@ -405,7 +405,7 @@ export default function LoginPage() {
             <div className="mt-6 text-center">
               <p className="text-white/70 text-sm">
                 Don&apos;t have an account?{" "}
-                <Link href="/register" className="font-medium text-white hover:text-white/90">
+                <Link to="/registration" className="font-medium text-white hover:text-white/90">
                   Register
                 </Link>
               </p>

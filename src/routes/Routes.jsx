@@ -13,6 +13,7 @@ import HelpCenter from "../pages/HelpCenter";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegistrationPage";
 import WindowBlindsSinglePage from "../pages/WindowBlindsSinglePage";
+import ALLProductSinglePage from "../pages/ALLProductSinglePage";
 
 const router = createBrowserRouter([
 	{
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
 			{
 				path:'window-blinds-singlepage',
 				element:<WindowBlindsSinglePage></WindowBlindsSinglePage>
+			},
+			{
+				path:'all-product-singlepage',
+				element:<ALLProductSinglePage></ALLProductSinglePage>
 			}
 			
 		]

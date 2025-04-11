@@ -83,7 +83,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="mb-4">
       <div className="relative group lg:w-[220px] lg:h-[255px] w-[140px] h-[140px]">
-       <Link to="/window-blinds-singlepage">
+       <Link to="/all-product-singlepage">
        <img
           src={image}
           alt={title}
