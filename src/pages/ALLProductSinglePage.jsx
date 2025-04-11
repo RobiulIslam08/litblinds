@@ -113,84 +113,113 @@ const ALLProductSinglePage = () => {
 							</div>
 							<p className='text-primary font-semibold'>Delivery in Canada 7-14 days</p>
 							{/* Enter Measurements */}
-							<p className='text-primary text-base mt-1 lg:mt-2 font-semibold'>Size: <span className='font-bold text-black'>15"X15"</span></p>
-							<hr className='text-gray-400 ' />
-							<p className='font-bold transition ease-in-out hover:text-blue-600 mt-3 lg:mt-4 cursor-pointer duration-300'>Custom Size</p>
-							<div className='flex justify-between items-center gap-10'>
-								<div className='flex flex-col lg:flex-row gap-2 items-center justify-between'>
-									{/* imagge */}
-									<div>
-										<img src={defaultWidth} alt="" className='lg:w-[200px] w-full' />
+							<div>
+								<p className='text-primary text-base mt-1 lg:mt-2 font-semibold'>Size: <span className='font-bold text-black'>15"X15"</span></p>
+								<hr className='text-gray-400 ' />
+								<p className='font-bold transition ease-in-out hover:text-blue-600 mt-3 lg:mt-4 cursor-pointer duration-300'>Custom Size</p>
+								<div className='flex justify-between items-center gap-10'>
+									<div className='flex flex-col lg:flex-row gap-2 items-center justify-between'>
+										{/* imagge */}
+										<div>
+											<img src={defaultWidth} alt="" className='lg:w-[200px] w-full' />
+										</div>
+										{/* width */}
+										<div className="ml-4">
+											<div className="flex flex-col  gap-2">
+												<p className='text-sm text-primary'>Width (inches)</p>
+												{/* Whole inches dropdown */}
+												<select
+													value={wholeInches}
+													onChange={(e) => setWholeInches(Number(e.target.value))}
+													className="border p-1 rounded-md w-20 lg:w-20"
+												>
+													{Array.from({ length: 129 }, (_, i) => 15 + i).map((num) => (
+														<option key={num} value={num}>{num}"</option>
+													))}
+												</select>
+
+												{/* Fraction dropdown */}
+												<select
+													value={fraction}
+													onChange={(e) => setFraction(Number(e.target.value))}
+													className="border p-1 rounded-md w-20 lg:w-20"
+												>
+													{[0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875].map((frac) => (
+														<option key={frac} value={frac}>
+															{frac === 0 ? '0' : `${(frac * 8).toFixed(0)}/8`}
+														</option>
+													))}
+												</select>
+
+												<span className="text-sm font-bold text-primary">Size CM: {totalCm}</span>
+											</div>
+										</div>
 									</div>
-									{/* width */}
-									<div className="ml-4">
-										<div className="flex flex-col  gap-2">
-											<p className='text-sm text-primary'>Width (inches)</p>
-											{/* Whole inches dropdown */}
-											<select
-												value={wholeInches}
-												onChange={(e) => setWholeInches(Number(e.target.value))}
-												className="border p-1 rounded-md w-20 lg:w-20"
-											>
-												{Array.from({ length: 129 }, (_, i) => 15 + i).map((num) => (
-													<option key={num} value={num}>{num}"</option>
-												))}
-											</select>
+									<div className='flex flex-col lg:flex-row gap-2 items-center justify-between'>
+										{/* imagge */}
+										<div>
+											<img src={defaultHeight} alt="" className='lg:w-[200px] md:w-full' />
+										</div>
+										{/* height */}
+										<div className="ml-4">
+											<div className="flex flex-col  gap-2">
+												<p className='text-sm text-primary'>Width (inches)</p>
+												{/* Whole inches dropdown */}
+												<select
+													value={wholeInchesHeight}
+													onChange={(e) => setWholeInchesHeight(Number(e.target.value))}
+													className="border p-1 rounded-md w-20 lg:w-20"
+												>
+													{Array.from({ length: 129 }, (_, i) => 15 + i).map((num) => (
+														<option key={num} value={num}>{num}"</option>
+													))}
+												</select>
 
-											{/* Fraction dropdown */}
-											<select
-												value={fraction}
-												onChange={(e) => setFraction(Number(e.target.value))}
-												className="border p-1 rounded-md w-20 lg:w-20"
-											>
-												{[0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875].map((frac) => (
-													<option key={frac} value={frac}>
-														{frac === 0 ? '0' : `${(frac * 8).toFixed(0)}/8`}
-													</option>
-												))}
-											</select>
+												{/* Fraction dropdown */}
+												<select
+													value={fractionHeight}
+													onChange={(e) => setFractionHeight(Number(e.target.value))}
+													className="border p-1 rounded-md w-20 lg:w-20"
+												>
+													{[0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875].map((frac) => (
+														<option key={frac} value={frac}>
+															{frac === 0 ? '0' : `${(frac * 8).toFixed(0)}/8`}
+														</option>
+													))}
+												</select>
 
-											<span className="text-sm font-bold text-primary">Size CM: {totalCm}</span>
+												<span className="text-sm font-bold text-primary">Size CM: {totalCmHeight}</span>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div className='flex flex-col lg:flex-row gap-2 items-center justify-between'>
-									{/* imagge */}
-									<div>
-										<img src={defaultHeight} alt="" className='lg:w-[200px] md:w-full' />
-									</div>
-									{/* height */}
-									<div className="ml-4">
-										<div className="flex flex-col  gap-2">
-											<p className='text-sm text-primary'>Width (inches)</p>
-											{/* Whole inches dropdown */}
-											<select
-												value={wholeInchesHeight}
-												onChange={(e) => setWholeInchesHeight(Number(e.target.value))}
-												className="border p-1 rounded-md w-20 lg:w-20"
-											>
-												{Array.from({ length: 129 }, (_, i) => 15 + i).map((num) => (
-													<option key={num} value={num}>{num}"</option>
-												))}
-											</select>
-
-											{/* Fraction dropdown */}
-											<select
-												value={fractionHeight}
-												onChange={(e) => setFractionHeight(Number(e.target.value))}
-												className="border p-1 rounded-md w-20 lg:w-20"
-											>
-												{[0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875].map((frac) => (
-													<option key={frac} value={frac}>
-														{frac === 0 ? '0' : `${(frac * 8).toFixed(0)}/8`}
-													</option>
-												))}
-											</select>
-
-											<span className="text-sm font-bold text-primary">Size CM: {totalCmHeight}</span>
-										</div>
-									</div>
+							</div>
+							{/* product description */}
+							<div className='mt-3 lg:mt-4'>
+								<div className='flex items-center'>
+									<p className='w-[130px] lg:w-[160px] text-base font-bold text-[#212529]'>Material</p>
+									<p className='font-semibold text-gray-700'>Paper</p>
 								</div>
+								<div className='flex items-center'>
+									<p className='w-[130px] lg:w-[160px] text-base font-bold text-[#212529]'>Colour</p>
+									<p className='font-semibold text-gray-700'>Tea</p>
+								</div>
+								<div className='flex items-center'>
+									<p className='w-[130px] lg:w-[160px] text-base font-bold text-[#212529]'>Brand</p>
+									<p className='font-semibold text-gray-700'>yoncup</p>
+								</div>
+								<div className='flex items-center'>
+									<p className='w-[130px] lg:w-[160px] text-base font-bold text-[#212529]'>Style</p>
+									<p className='font-semibold text-gray-700'>Solid</p>
+								</div>
+								<div className='flex items-center'>
+									<p className='w-[130px] lg:w-[160px] text-base font-bold text-[#212529]'>Item Weight</p>
+									<p className='font-semibold text-gray-700'>0.5 Pound</p>
+								</div>
+								<p className='text-base font-bold text-[#212529]'>About this item</p>
+								<p  className='font-semibold text-gray-700 ml-3 lg:ml-5'>Example description of the product.</p>
+
+
 							</div>
 						</div>
 						{/* price for this */}
