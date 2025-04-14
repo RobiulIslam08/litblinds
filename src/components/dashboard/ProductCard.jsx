@@ -102,7 +102,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* Product Info */}
-        <p className='font-bold text-lg text-gray-600'>{title}</p>
+        <p className='font-bold text-lg text-gray-400'>{title}</p>
         <div className='flex items-center'>
           <span className='text-yellow-500'>{renderStars()}</span>
           <span className='text-sm ml-1'>({reviews})</span>
