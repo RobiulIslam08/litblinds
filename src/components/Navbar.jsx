@@ -225,7 +225,7 @@ const Navbar = () => {
 									}`}
 							>
 								<p className="px-4 py-1 text-sm hover:bg-gray-100">Hi, Rabiul</p>
-								<p className="px-4 py-1 text-sm hover:bg-gray-100"><Link to="login">Login</Link></p>
+								<p className="px-4 py-1 text-sm hover:bg-gray-100"><Link to="/login">Login</Link></p>
 								<p className="px-4 py-1 text-sm hover:bg-gray-100"><Link to="registration">Register</Link></p>
 								<p className="px-4 py-1 text-sm hover:bg-gray-100 text-red-500">Log out</p>
 							</div>
