@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { FaLocationDot, FaUser } from 'react-icons/fa6';
 
-import { IoCall, IoNotifications } from 'react-icons/io5';
+import { IoCall, IoLogOut, IoNotifications } from 'react-icons/io5';
 import videoLogo from "../assets/video.mp4"
 import Discount from './home/Discount';
 import { Link, useLocation } from 'react-router-dom';
@@ -12,9 +12,11 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
 	const location = useLocation();
 	const [selectedLanguage, setSelectedLanguage] = useState("English");
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isMenuOpenUser, setIsMenuOpenUser] = useState(false);
+	const [isMenuOpenCart, setIsMenuOpenCart] = useState(false);
 	// Toggle menu visibility on click
-	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+	const toggleMenuCart = () => setIsMenuOpenCart(!isMenuOpenCart);
+	const toggleMenuUser = () => setIsMenuOpenUser(!isMenuOpenUser);
 	const languages = ["English", "Español", "Français", "Arabic"];
 
 	// for currency
@@ -48,7 +50,7 @@ const Navbar = () => {
 			<div className='flex justify-around lg:justify-between items-center bg-[#eeeeee] lg:px-7 py-2'>
 				{/* left */}
 				{/* this for desktop */}
-				<p className='text-primary font-semibold text-xs hidden lg:flex'>Your trusted store for Home Decoration</p>
+				<p className='text-primary font-semibold text-xs hidden lg:flex' id="site_title">Your trusted store for Home Decoration</p>
 				{/* this for mobile */}
 
 
@@ -207,21 +209,40 @@ const Navbar = () => {
 							</div>
 							<p className='text-xs  hidden lg:flex'>Notice</p>
 						</div>
-						<div className='flex flex-col items-center leading-2.5 relative'>
-							<div>
-								<FaShoppingCart className='text-primary' />
-								<p className='absolute text-white bg-red-400 font-bold p-[1.5px] rounded-full  text-[10px] right-0 bottom-3'>6</p>
+						{/* cart */}
+						<div className="flex flex-col items-center leading-2.5 relative group cursor-pointer">
+							<FaShoppingCart className="text-primary" onClick={toggleMenuCart} />
+							<p className="text-xs hidden lg:flex">Cart</p>
+
+							{/* Dropdown */}
+							<div
+								className={`absolute top-8 right-0 bg-white shadow-lg border rounded-md w-32  transition-all duration-300 z-50 ${isMenuOpenCart ? 'opacity-100 visible' : 'opacity-0 invisible'
+									}`}
+							>
+								<div>
+									<div className='flex items-center gap-2 px-2 py-2 bg-blue text-white '>
+										<FaShoppingCart className="text-white  font-semibold" />
+										<p>Your Cart</p>
+
+									</div>
+									<div className='flex items-center justify-between gap-2 px-2 py-2 bg-white text-black '>
+										<p>Sub Total</p>
+										<p>0 $</p>
+
+									</div>
+									<button>View Cart</button>
+									<button>Buy it Now</button>
+								</div>
 							</div>
-							<p className='text-xs  hidden lg:flex'>cart</p>
 						</div>
 						{/* user */}
 						<div className="flex flex-col items-center leading-2.5 relative group cursor-pointer">
-							<FaUser className="text-primary" onClick={toggleMenu} />
+							<FaUser className="text-primary" onClick={toggleMenuUser} />
 							<p className="text-xs hidden lg:flex">user</p>
 
 							{/* Dropdown */}
 							<div
-								className={`absolute top-8 right-0 bg-white shadow-lg border rounded-md w-32 py-2 transition-all duration-300 z-50 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+								className={`absolute top-8 right-0 bg-white shadow-lg border rounded-md w-32 py-2 transition-all duration-300 z-50 ${isMenuOpenUser ? 'opacity-100 visible' : 'opacity-0 invisible'
 									}`}
 							>
 								<p className="px-4 py-1 text-sm hover:bg-gray-100">Hi, Rabiul</p>
@@ -246,18 +267,35 @@ const Navbar = () => {
 			{/* Mobile Menu */}
 			{/* Mobile Menu */}
 			{isOpen && (
-				<div className="md:hidden absolute top-16 left-0 w-[75%]  bg-white  z-30 overflow-y-auto animate-slide-in-left">
+				<div className="md:hidden absolute  left-0 w-[75%] h-[550px]  bg-blue  z-30  animate-slide-in-left">
+					{/* User profile section */}
+					<div className="p-4 border-b border-blue-700">
+						<div className="flex items-center gap-3">
+							<div className="w-12 h-12 rounded-full bg-white overflow-hidden">
+								<img src="/placeholder.svg?height=48&width=48" alt="Profile" className="w-full h-full object-cover" />
+							</div>
+							<div className="text-white">
+								<h3 className="font-bold text-lg">Robi</h3>
+								<p className="text-xs text-blue-200">robi@gmail.com</p>
+							</div>
+						</div>
+					</div>
 					<div className="py-1 space-y-2 ">
 						{menuItems.map((item) => (
 							<a
 								key={item.path}
 								href={item.path}
-								className="block text-gray-700 text-base font-semibold px-4 py-2 rounded hover:bg-gray-100 transition duration-200 border-b"
+								className="block text-base font-semibold px-4 py-2 rounded hover:bg-gray-100 transition duration-200 text-white"
 								onClick={() => setIsOpen(false)}
 							>
 								{item.name}
 							</a>
 						))}
+					</div>
+					{/* for logout */}
+					<div className='flex items-center text-white px-4 py-1 gap-3 border w-fit m-4'>
+						<IoLogOut className='text-lg' />
+						<p className='font-semibold'>Log Out</p>
 					</div>
 				</div>
 			)}

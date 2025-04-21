@@ -12,7 +12,7 @@ import { Navigation, Autoplay, Pagination, Mousewheel, Keyboard } from 'swiper/m
 
 const Slider = () => {
   return (
-    <div className="w-full overflow-hidden bg-red-300">
+    <div className="w-full overflow-hidden bg-white">
       {/* Swiper কন্টেইনার */}
       <Swiper
         className=""
