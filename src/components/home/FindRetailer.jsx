@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { MapPin, Clock, Phone, Navigation } from "lucide-react"
 
 export default function FindRetailer() {
@@ -114,6 +114,31 @@ export default function FindRetailer() {
 	}
 
 	const currentStore = storeData[selectedCountry]
+
+
+	// for google map
+	
+	const [userLocation, setUserLocation] = useState(null);
+  
+	useEffect(() => {
+	  if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(
+		  (position) => {
+			setUserLocation({
+			  lat: position.coords.latitude,
+			  lng: position.coords.longitude,
+			});
+		  },
+		  (error) => {
+			console.error("Geolocation error:", error);
+			setUserLocation(null);
+		  }
+		);
+	  } else {
+		console.log("Geolocation not supported");
+		setUserLocation(null);
+	  }
+	}, []);
 
 	return (
 		<div className="my-2 md:my-3 lg:my-4">
@@ -256,33 +281,29 @@ export default function FindRetailer() {
 					</div>
 
 					{/* Map */}
-					<div className="relative h-48 bg-gray-200">
-						<div className="absolute inset-0 flex items-center justify-center">
-							<div className="text-gray-500">Google Map would be displayed here</div>
-						</div>
-						<div className="absolute bottom-2 left-2 flex space-x-4 text-xs">
-							<button className="bg-white px-2 py-1 shadow">Map</button>
-							<button className="bg-white px-2 py-1 shadow">Satellite</button>
-						</div>
-						<div className="absolute bottom-2 right-2">
-							<button className="bg-white p-1 shadow">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									className="h-5 w-5"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										strokeWidth={2}
-										d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"
-									/>
-								</svg>
-							</button>
-						</div>
-					</div>
+					<div className="relative h-64 bg-gray-200">
+  {userLocation ? (
+    <iframe
+      title="User Location"
+      width="100%"
+      height="100%"
+      className="absolute inset-0"
+      loading="lazy"
+      allowFullScreen
+      src={`https://www.google.com/maps?q=${userLocation.lat},${userLocation.lng}&z=15&output=embed`}
+    ></iframe>
+  ) : (
+    <div className="absolute inset-0 flex items-center justify-center text-gray-500">
+      Unable to access your location or still fetching...
+    </div>
+  )}
+
+  <div className="absolute bottom-2 left-2 flex space-x-4 text-xs">
+    <button className="bg-white px-2 py-1 shadow">Map</button>
+    <button className="bg-white px-2 py-1 shadow">Satellite</button>
+  </div>
+</div>
+
 
 					{/* Store Information */}
 					<div className="p-4">
