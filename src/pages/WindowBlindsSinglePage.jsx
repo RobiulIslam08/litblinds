@@ -83,8 +83,16 @@ const WindowBlindsSinglePage = () => {
 							<h1 className='text-primary font-bold '>Persianas De Ventana</h1>
 							<p className='text-xl font-bold text-primary mb-4'>$130</p>
 
+							{/* quantity */}
+							<div>
+								<p className='text-primary text-sm mt-3 md:mt-4 lg:mt-5 '>Quantity</p>
+								<hr className='text-gray-400 ' />
+								<QuantityCounter ></QuantityCounter>
+
+							</div>
+
 							{/* cart, buy, heard, share button*/}
-							<div className='flex flex-wrap items-center gap-2'>
+							<div className='flex flex-wrap items-center gap-2 mt-3 md:mt-4 lg:mt-5'>
 								<button className='border border-blue-500 px-3 py-1 text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition ease-in-outrounded-md'>Add To Cart</button>
 								<button className='border border-blue-500 px-3 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 text-white transition ease-in-outrounded-md'>Add To Cart</button>
 								<FaHeart className="border border-blue-500 px-3 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 transition ease-in-out h-9 w-9  cursor-pointer text-white rounded-md" />
@@ -350,13 +358,7 @@ const WindowBlindsSinglePage = () => {
 
 						</div>
 
-						{/* quantity */}
-						<div>
-							<p className='text-primary text-sm mt-3 md:mt-4 lg:mt-5'>Quantity</p>
-							<hr className='text-gray-400 ' />
-							<QuantityCounter></QuantityCounter>
 
-						</div>
 
 						{/* Room Name */}
 						<div>

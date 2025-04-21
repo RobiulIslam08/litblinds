@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import { MapPin, Clock, Phone, Navigation } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function FindRetailer() {
 	const [selectedCountry, setSelectedCountry] = useState("USA")
@@ -336,10 +337,12 @@ export default function FindRetailer() {
 									<span>{currentStore.travelTime}</span>
 								</div>
 
+								<Link to="">
 								<div className="flex items-center">
 									<Navigation className="h-5 w-5 mr-1" />
-									<span className="text-blue-600 font-medium">Direction</span>
+									<span className="text- font-medium">Direction</span>
 								</div>
+								</Link>
 							</div>
 
 							<div className="flex items-center">

@@ -14,7 +14,9 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegistrationPage";
 import WindowBlindsSinglePage from "../pages/WindowBlindsSinglePage";
 import ALLProductSinglePage from "../pages/ALLProductSinglePage";
-import FindRetailer from "../components/home/FindRetailer";
+import FindRetailer from "../pages/FindRetailer";
+import UserProfilePage from "../pages/UserProfilePage";
+import EditProfilePage from "../pages/EditProfilePage";
 
 const router = createBrowserRouter([
 	{
@@ -49,6 +51,14 @@ const router = createBrowserRouter([
 			{
 				path:'find-retailer',
 				element:<FindRetailer></FindRetailer>
+			},
+			{
+				path:'user-profile',
+				element:<UserProfilePage></UserProfilePage>
+			},
+			{
+				path:'edit-profile',
+				element:<EditProfilePage></EditProfilePage>
 			}
 			
 		]
