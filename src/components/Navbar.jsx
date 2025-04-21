@@ -118,10 +118,10 @@ const Navbar = () => {
 
 				{/* middle */}
 				{/* for desktop */}
-				<div className='hidden lg:flex items-center gap-2'>
+				<Link to="/find-retailer"><div className='hidden lg:flex items-center gap-2'>
 					<FaLocationDot className='text-primary' />
 					<p className='text-primary font-bold'>Find Retailer</p>
-				</div>
+				</div></Link>
 				{/* this for mobile */}
 
 				{/* for language and currency */}
@@ -216,22 +216,22 @@ const Navbar = () => {
 
 							{/* Dropdown */}
 							<div
-								className={`absolute top-8 right-0 bg-white shadow-lg border rounded-md w-32  transition-all duration-300 z-50 ${isMenuOpenCart ? 'opacity-100 visible' : 'opacity-0 invisible'
+								className={`absolute top-8 right-0 bg-white shadow-lg border rounded-md w-36  transition-all duration-300 z-50 ${isMenuOpenCart ? 'opacity-100 visible' : 'opacity-0 invisible'
 									}`}
 							>
 								<div>
-									<div className='flex items-center gap-2 px-2 py-2 bg-blue text-white '>
+									<div className='flex items-center gap-2 px-2 py-4 bg-blue text-white '>
 										<FaShoppingCart className="text-white  font-semibold" />
 										<p>Your Cart</p>
 
 									</div>
-									<div className='flex items-center justify-between gap-2 px-2 py-2 bg-white text-black '>
-										<p>Sub Total</p>
-										<p>0 $</p>
+									<div className='flex items-center justify-between gap-2 px-2 py-3 bg-white text-black '>
+										<p className='font-semibold'>Sub Total</p>
+										<p className='font-semibold'>0 $</p>
 
 									</div>
-									<button>View Cart</button>
-									<button>Buy it Now</button>
+									<button className='bg-gray-700 text-white text-center  w-full py-3'>View Cart</button>
+									<button className='bg-blue text-white text-center  w-full py-3'>Buy it Now</button>
 								</div>
 							</div>
 						</div>

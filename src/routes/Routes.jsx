@@ -14,6 +14,7 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegistrationPage";
 import WindowBlindsSinglePage from "../pages/WindowBlindsSinglePage";
 import ALLProductSinglePage from "../pages/ALLProductSinglePage";
+import FindRetailer from "../components/home/FindRetailer";
 
 const router = createBrowserRouter([
 	{
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
 			{
 				path:'all-product-singlepage',
 				element:<ALLProductSinglePage></ALLProductSinglePage>
+			},
+			{
+				path:'find-retailer',
+				element:<FindRetailer></FindRetailer>
 			}
 			
 		]
