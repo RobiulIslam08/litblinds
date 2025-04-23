@@ -230,7 +230,7 @@ const Navbar = () => {
 										<p className='font-semibold'>0 $</p>
 
 									</div>
-								<Link to='/view-cart'>	<button className='bg-gray-700 text-white text-center  w-full py-3'>View Cart</button></Link>
+									<Link to='/view-cart'>	<button className='bg-gray-700 text-white text-center  w-full py-3'>View Cart</button></Link>
 									<button className='bg-blue text-white text-center  w-full py-3'>Buy it Now</button>
 								</div>
 							</div>
@@ -325,10 +325,11 @@ const Navbar = () => {
 
 				</div>
 				{/* find retailer */}
-				<div className='lg:hidden flex items-center gap-2'>
-					<FaLocationDot className='text-primary text-xs' />
-					<p className='text-primary font-bold text-xs'>Find Retailer</p>
-				</div>
+				<Link to='/find-retailer'>
+					<div className='lg:hidden flex items-center gap-2'>
+						<FaLocationDot className='text-primary text-xs' />
+						<p className='text-primary font-bold text-xs'>Find Retailer</p>
+					</div></Link>
 				{/* search input */}
 				<div className='relative inline-block'>
 					<input type="text" className=' border border-[#b3b3b3] outline-none w-[130px] lg:w-[350px] rounded-md lg:py-1 lg:px-3 px-2 text-xs lg:text:md' />

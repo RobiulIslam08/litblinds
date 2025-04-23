@@ -71,7 +71,7 @@ const UserProfilePage = () => {
 		germany: "🇩🇪",
 	}
 	return (
-		<div>
+		<div className='mb-7'>
 			<div className="my-7 md:my-16 border border-gray-200 rounded-lg shadow-sm bg-white overflow-hidden">
 				{/* User Profile Section */}
 				<div className="p-4 flex justify-between items-center">
@@ -90,8 +90,8 @@ const UserProfilePage = () => {
 
 				{/* Order Delivery Banner */}
 				<div className="bg-blue text-white py-3 px-4 flex justify-between items-center">
-					<div className="font-medium">Your Running Order Delivery : -227 Days</div>
-					<div className="font-medium">Time: -14:-40:-8</div>
+					<div className="font-medium text-xs md:text-base">Your Running Order Delivery : -227 Days</div>
+					<div className="font-medium text-xs md:text-base">Time: -14:-40:-8</div>
 				</div>
 
 				{/* Dashboard Cards */}
