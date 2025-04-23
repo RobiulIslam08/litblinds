@@ -66,10 +66,10 @@ const router = createBrowserRouter([
 				path:'view-cart',
 				element:<ViewCartPage></ViewCartPage>
 			},
-			// {
-			// 	path:'buy-it-now',
-			// 	element:<PayWithCardPage></PayWithCardPage>
-			// }
+			{
+				path:'buy-it-now',
+				element:<PayWithCardPage></PayWithCardPage>
+			}
 			
 		]
 	},

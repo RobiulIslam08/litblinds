@@ -286,7 +286,7 @@ const Navbar = () => {
 							<a
 								key={item.path}
 								href={item.path}
-								className="block text-base font-semibold px-4 py-2 rounded hover:bg-gray-100 transition duration-200 text-white"
+								className="block text-base font-semibold px-4 py-2 rounded  transition duration-200 text-white"
 								onClick={() => setIsOpen(false)}
 							>
 								{item.name}

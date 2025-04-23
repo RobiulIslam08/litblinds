@@ -47,7 +47,7 @@ export default function PayWithCardPage() {
 
 function FormSection() {
   return (
-    <form className="space-y-3">
+    <div className="space-y-3">
       <Input label="First Name:" placeholder="First Name:" />
       <Input label="Last Name:" placeholder="Last Name:" />
       <Input label="ALT Phone number" placeholder="Phone number" />
@@ -57,7 +57,7 @@ function FormSection() {
       <Input label="State/Province" placeholder="State/Province" />
       <Input label="ZIP/Postal Code" placeholder="ZIP/Postal Code" />
       <Input label="Country" placeholder="Afghanistan" />
-    </form>
+    </div>
   );
 }
 

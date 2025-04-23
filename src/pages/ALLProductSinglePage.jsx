@@ -16,6 +16,12 @@ import RollPositon from '../components/WindowBlindsSinglePage/RollPositon';
 import Headrail from '../components/WindowBlindsSinglePage/Headrail';
 import WarrentyOtion from '../components/WarrentyOtion';
 import ProductTabs from '../components/ProductTabs';
+
+
+
+
+import InnerImageZoom from 'react-inner-image-zoom'
+import 'react-inner-image-zoom/lib/styles.min.css'
 const ALLProductSinglePage = () => {
 	const [selectedImg, setSelectedImg] = useState(img1);
 
@@ -46,7 +52,17 @@ const ALLProductSinglePage = () => {
 			<div className='flex flex-col lg:flex-row  gap-8 my-3 lg:my-5'>
 				{/* Left Side */}
 				<div className='w-full lg:w-[30%] mt-6'>
-					<img src={selectedImg} alt="Main" className='rounded-md w-full h-[200px]' />
+				<InnerImageZoom src={selectedImg}  className='rounded-md w-full h-auto '   
+				 zoomSrc={selectedImg}  // বড় চিত্রের URL
+			 // চিত্রের zoom পরিমাণ 2 গুণ
+				//  zoomType="hover"  // মাউস hover করলে zoom হবে
+				 moveType="pan"  // প্যানিং মোড
+				 fadeDuration={200}  // zoom ইন/আউট ট্রানজিশন সময় 200ms
+				 fullscreenOnMobile={true}  // মোবাইলে ফুলস্ক্রীন জুম
+				 mobileBreakpoint={640}  // মোবাইলের জন্য ব্রেকপয়েন্ট
+				 hasSpacer={true}  // স্পেসার ব্যবহার করে cumulative layout shift প্রতিরোধ
+				/>
+					{/* <img src={selectedImg} alt="Main" className='rounded-md w-full h-[200px]' /> */}
 
 					<div className='flex gap-3 mt-5'>
 						<img
