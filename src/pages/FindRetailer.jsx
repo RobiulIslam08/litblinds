@@ -152,7 +152,7 @@ export default function FindRetailer() {
 
 				{/* Find Online Section */}
 				<div className="bg-white shadow-md">
-					<div className="bg-[#000033] text-white p-4">
+					<div className="bg-blue text-white p-4">
 						<h2 className="text-xl font-bold">Find Online</h2>
 					</div>
 					<div className="grid grid-cols-2 gap-2 p-2">
@@ -252,7 +252,7 @@ export default function FindRetailer() {
 
 				{/* Find Nearby Section */}
 				<div className="bg-white shadow-md">
-					<div className="bg-[#000033] text-white p-4">
+					<div className="bg-blue text-white p-4">
 						<h2 className="text-xl font-bold">Find Nearby</h2>
 					</div>
 

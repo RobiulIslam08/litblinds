@@ -230,7 +230,7 @@ const Navbar = () => {
 										<p className='font-semibold'>0 $</p>
 
 									</div>
-									<button className='bg-gray-700 text-white text-center  w-full py-3'>View Cart</button>
+								<Link to='/view-cart'>	<button className='bg-gray-700 text-white text-center  w-full py-3'>View Cart</button></Link>
 									<button className='bg-blue text-white text-center  w-full py-3'>Buy it Now</button>
 								</div>
 							</div>

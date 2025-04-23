@@ -17,6 +17,7 @@ import ALLProductSinglePage from "../pages/ALLProductSinglePage";
 import FindRetailer from "../pages/FindRetailer";
 import UserProfilePage from "../pages/UserProfilePage";
 import EditProfilePage from "../pages/EditProfilePage";
+import ViewCartPage from "../pages/ViewCartPage";
 
 const router = createBrowserRouter([
 	{
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
 			{
 				path:'edit-profile',
 				element:<EditProfilePage></EditProfilePage>
+			},
+			{
+				path:'view-cart',
+				element:<ViewCartPage></ViewCartPage>
 			}
 			
 		]
@@ -92,6 +97,7 @@ const router = createBrowserRouter([
 				path:'shop-by-features',
 				element:<ShopByFeaturePage></ShopByFeaturePage>
 			},
+			
 			
 			
 			// অন্যান্য route গুলো এখানে
