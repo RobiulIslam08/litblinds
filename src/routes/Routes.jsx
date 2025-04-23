@@ -18,6 +18,7 @@ import FindRetailer from "../pages/FindRetailer";
 import UserProfilePage from "../pages/UserProfilePage";
 import EditProfilePage from "../pages/EditProfilePage";
 import ViewCartPage from "../pages/ViewCartPage";
+import PayWithCardPage from "../pages/PayWithCardPage";
 
 const router = createBrowserRouter([
 	{
@@ -64,7 +65,11 @@ const router = createBrowserRouter([
 			{
 				path:'view-cart',
 				element:<ViewCartPage></ViewCartPage>
-			}
+			},
+			// {
+			// 	path:'buy-it-now',
+			// 	element:<PayWithCardPage></PayWithCardPage>
+			// }
 			
 		]
 	},

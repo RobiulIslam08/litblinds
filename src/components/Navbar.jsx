@@ -231,7 +231,7 @@ const Navbar = () => {
 
 									</div>
 									<Link to='/view-cart'>	<button className='bg-gray-700 text-white text-center  w-full py-3'>View Cart</button></Link>
-									<button className='bg-blue text-white text-center  w-full py-3'>Buy it Now</button>
+									<Link to="/buy-it-now"><button className='bg-blue text-white text-center  w-full py-3'>Buy it Now</button></Link>
 								</div>
 							</div>
 						</div>

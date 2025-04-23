@@ -1,45 +1,4 @@
-// import React from 'react';
-// import { RiRectangleFill } from 'react-icons/ri';
 
-// const YourselfCard = () => {
-// 	return (
-// 		<div className='flex justify-between items-center px-4 py-10'>
-// 			{/* left */}
-// 			<div>
-// 				<h1 className='text-center text-white font-semibold text-lg lg:text-2xl pb-4'>DO IT YOURSELF</h1>
-// 				<div className='grid grid-cols-2'>
-// 					<div className='flex items-center gap-1 text-white font-semibold'>
-
-// 						<RiRectangleFill />
-// 						<h1>BUYING GUIDES{'>'}{'>'}</h1>
-// 					</div>
-// 					<div className='flex items-center gap-1 text-white font-semibold'>
-
-// 						<RiRectangleFill />
-// 						<h1>MEASURE {'>'}{'>'}</h1>
-// 					</div>
-// 					<div className='flex items-center gap-1 text-white font-semibold'>
-
-// 						<RiRectangleFill />
-// 						<h1>TECH TIPS {'>'}{'>'}</h1>
-// 					</div>
-// 					<div className='flex items-center gap-1 text-white font-semibold'>
-
-// 						<RiRectangleFill />
-// 						<h1>INSTALL {'>'}{'>'}</h1>
-// 					</div>
-// 				</div>
-// 			</div>
-// 			{/* right */}
-// 			<div>
-// 				<h1 className='text-lg lg:text-2xl font-semibold text-white pb-4'>PROFESSIONAL MEASURING & INSTALLATION</h1>
-// 				<p className='text-white'>$000 FULL-HOME MEASURING & INSTALLATION PACKAGE {'>'}{'>'}</p>
-// 			</div>
-// 		</div>
-// 	);
-// };
-
-// export default YourselfCard;
 import React from 'react';
 import { RiRectangleFill } from 'react-icons/ri';
 import bg from "../../assets/images/windowBlindsInfoBox.png"
