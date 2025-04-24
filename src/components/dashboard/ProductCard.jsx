@@ -23,7 +23,13 @@ const ProductCard = ({ product }) => {
   return (
     <div className="mb-4">
       <div className="relative group lg:w-[220px] lg:h-[255px] w-[140px] h-[140px]">
-       <Link to={product.category === 'window-blinds' ? '/window-blinds-singlepage' : '/all-product-singlepage'}>
+       <Link  to={
+    product.category === 'window-blinds'
+      ? '/window-blinds-singlepage'
+      : product.category === 'wallpaper'
+      ? '/wallpaper-details-page'
+      : '/all-product-singlepage'
+  }>
        <img
           src={image}
           alt={title}

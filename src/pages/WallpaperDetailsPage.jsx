@@ -20,7 +20,7 @@ import InnerImageZoom from 'react-inner-image-zoom'
 import 'react-inner-image-zoom/lib/styles.min.css'
 import SizeSelector from '../components/WindowBlindsSinglePage/SizeSelector';
 
-const ALLProductSinglePage = () => {
+const WallpaperDetailsPage = () => {
 	const [selectedImg, setSelectedImg] = useState(img1);
 
 	console.log('heelo', location)
@@ -174,9 +174,9 @@ const ALLProductSinglePage = () => {
 							<p className='text-primary font-semibold'>Delivery in Canada 7-14 days</p>
 							{/* Enter Measurements */}
 							<div>
-								<p className='text-primary text-base mt-1 lg:mt-2 font-semibold'>Size: <span className='font-bold text-black'>15"X15"</span></p>
 							
-								<hr className='text-gray-400 ' />
+								<SizeSelector></SizeSelector>
+								<hr className='text-gray-400 mt-2 md:mt-5' />
 								<p className='font-bold transition ease-in-out hover:text-blue-600 mt-3 lg:mt-4 cursor-pointer duration-300'>Custom Size</p>
 								<div className='flex justify-between items-center gap-10'>
 									<div className='flex flex-col lg:flex-row gap-2 items-center justify-between'>
@@ -331,4 +331,4 @@ const ALLProductSinglePage = () => {
 	);
 };
 
-export default ALLProductSinglePage;
+export default WallpaperDetailsPage;

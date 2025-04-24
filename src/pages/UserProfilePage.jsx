@@ -4,6 +4,7 @@ import { ChevronRight, CreditCard, Shield, Globe, LayoutGrid, QrCode, BellRing }
 import { FaUser, FaShoppingCart, FaExchangeAlt, FaCreditCard, FaHeart } from "react-icons/fa"
 import { Link } from 'react-router-dom';
 import Dropdown from '../components/home/Dropdown';
+import specialOffer from '../assets/images/special-offer.jpg'
 const UserProfilePage = () => {
 	const [showAddressForm, setShowAddressForm] = useState(false)
 
@@ -93,11 +94,11 @@ const UserProfilePage = () => {
 					<div className="font-medium text-xs md:text-base">Your Running Order Delivery : -227 Days</div>
 					<div className="font-medium text-xs md:text-base">Time: -14:-40:-8</div>
 				</div>
-
+<img src={specialOffer} className='h-[200px] md:h-[300px] lg:h-[500px] w-full' alt="" />
 				{/* Dashboard Cards */}
-				<div className="grid grid-cols-2  md:grid-cols-4 divide-x divide-gray-200">
+				<div className="grid grid-cols-1  md:grid-cols-4 p-10 gap-4">
 					{/* Order Card */}
-					<div className="p-6 flex flex-col items-center text-center shadow-md">
+					<div className="p-6 flex flex-col items-center text-center shadow-md hover:bg-gray-100 transition-all ease-in-out duration-150 rounded-md">
 						<div className="mb-2">
 							<FaShoppingCart className="text-2xl text-gray-700" />
 						</div>
@@ -109,7 +110,7 @@ const UserProfilePage = () => {
 					</div>
 
 					{/* Returns Card */}
-					<div className="p-6 flex flex-col items-center text-center shadow-md">
+					<div className="p-6 flex flex-col items-center text-center shadow-md hover:bg-gray-100 transition-all ease-in-out duration-150 rounded-md">
 						<div className="mb-2">
 							<FaExchangeAlt className="text-2xl text-gray-700" />
 						</div>
@@ -121,7 +122,7 @@ const UserProfilePage = () => {
 					</div>
 
 					{/* Credits Card */}
-					<div className="p-6 flex flex-col items-center text-center shadow-md">
+					<div className="p-6 flex flex-col items-center text-center shadow-md hover:bg-gray-100 transition-all ease-in-out duration-150 rounded-md">
 						<div className="mb-2">
 							<FaCreditCard className="text-2xl text-gray-700" />
 						</div>
@@ -129,7 +130,7 @@ const UserProfilePage = () => {
 					</div>
 
 					{/* Wishlist Card */}
-					<div className="p-6 flex flex-col items-center text-center shadow-md">
+					<div className="p-6 flex flex-col items-center text-center shadow-md hover:bg-gray-100 transition-all ease-in-out duration-150 rounded-md">
 						<div className="mb-2">
 							<FaHeart className="text-2xl text-gray-700" />
 						</div>

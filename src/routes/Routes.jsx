@@ -19,6 +19,7 @@ import UserProfilePage from "../pages/UserProfilePage";
 import EditProfilePage from "../pages/EditProfilePage";
 import ViewCartPage from "../pages/ViewCartPage";
 import PayWithCardPage from "../pages/PayWithCardPage";
+import WallpaperDetailsPage from "../pages/WallpaperDetailsPage";
 
 const router = createBrowserRouter([
 	{
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
 			{
 				path:'all-product-singlepage',
 				element:<ALLProductSinglePage></ALLProductSinglePage>
+			},
+			{
+				path:'wallpaper-details-page',
+				element:<WallpaperDetailsPage></WallpaperDetailsPage>
 			},
 			{
 				path:'find-retailer',

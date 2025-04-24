@@ -15,6 +15,7 @@ import RollPositon from '../components/WindowBlindsSinglePage/RollPositon';
 import Headrail from '../components/WindowBlindsSinglePage/Headrail';
 import WarrentyOtion from '../components/WarrentyOtion';
 import ProductTabs from '../components/ProductTabs';
+import InnerImageZoom from 'react-inner-image-zoom';
 
 const WindowBlindsSinglePage = () => {
 	const [selectedImg, setSelectedImg] = useState(img1);
@@ -42,12 +43,29 @@ const WindowBlindsSinglePage = () => {
 		setTotalCmHeight(cm);
 	}, [wholeInchesHeight, fractionHeight]);
 
+	// for share button
+		const [isOpen, setIsOpen] = useState(false);
+		const handleShareClick = () => {
+			setIsOpen(!isOpen);
+		};
+		const urlToShare = "https://litblinds.com/singleproduct_window.php?p_id=82"; // শেয়ার করার ওয়েবসাইট URL
+
 	return (
 		<div>
 			<div className='flex flex-col lg:flex-row  gap-8 my-3 lg:my-5'>
 				{/* Left Side */}
 				<div className='w-full lg:w-[30%] mt-6'>
-					<img src={selectedImg} alt="Main" className='rounded-md w-full h-[200px]' />
+					<InnerImageZoom src={selectedImg} className='rounded-md w-full h-auto '
+						zoomSrc={selectedImg}  // বড় চিত্রের URL
+						// চিত্রের zoom পরিমাণ 2 গুণ
+						//  zoomType="hover"  // মাউস hover করলে zoom হবে
+						moveType="pan"  // প্যানিং মোড
+						fadeDuration={200}  // zoom ইন/আউট ট্রানজিশন সময় 200ms
+						fullscreenOnMobile={true}  // মোবাইলে ফুলস্ক্রীন জুম
+						mobileBreakpoint={640}  // মোবাইলের জন্য ব্রেকপয়েন্ট
+						hasSpacer={true}  // স্পেসার ব্যবহার করে cumulative layout shift প্রতিরোধ
+					/>
+					{/* <img src={selectedImg} alt="Main" className='rounded-md w-full h-[200px]' /> */}
 
 					<div className='flex gap-3 mt-5'>
 						<img
@@ -94,10 +112,47 @@ const WindowBlindsSinglePage = () => {
 							{/* cart, buy, heard, share button*/}
 							<div className='flex flex-wrap items-center gap-2 mt-3 md:mt-4 lg:mt-5'>
 								<button className='border border-blue-500 px-3 py-1 text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition ease-in-outrounded-md'>Add To Cart</button>
-								<button className='border border-blue-500 px-3 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 text-white transition ease-in-outrounded-md'>Add To Cart</button>
+								<button className='border border-blue-500 px-3 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 text-white transition ease-in-outrounded-md'>Buy it Now</button>
 								<FaHeart className="border border-blue-500 px-3 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 transition ease-in-out h-9 w-9  cursor-pointer text-white rounded-md" />
 
-								<FaShareAlt className="border border-blue-500 px-3 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 transition ease-in-out h-9 w-9 rounded-md cursor-pointer text-white " />
+								<FaShareAlt onClick={handleShareClick} className="relative border border-blue-500 px-3 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 transition ease-in-out h-9 w-9 rounded-md cursor-pointer text-white " />
+
+								{isOpen && (
+																	<div className="absolute left-36  -top-12 flex gap-3 bg-white p-2 rounded-md shadow-md z-50 transition-all duration-300">
+																		<a
+																			href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`}
+																			target="_blank"
+																			rel="noopener noreferrer"
+																			className="text-blue-600 hover:scale-110 transition-transform"
+																		>
+																			<FaFacebook size={24} />
+																		</a>
+																		<a
+																			href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(urlToShare)}`}
+																			target="_blank"
+																			rel="noopener noreferrer"
+																			className="text-blue-400 hover:scale-110 transition-transform"
+																		>
+																			<FaTwitter size={24} />
+																		</a>
+																		<a
+																			href={`https://www.instagram.com/`} // Instagram এ এমনভাবে শেয়ার করা যায় না সরাসরি, তবে লিংক দেওয়া যায়
+																			target="_blank"
+																			rel="noopener noreferrer"
+																			className="text-pink-500 hover:scale-110 transition-transform"
+																		>
+																			<FaInstagram size={24} />
+																		</a>
+																		<a
+																			href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(urlToShare)}`}
+																			target="_blank"
+																			rel="noopener noreferrer"
+																			className="text-blue-700 hover:scale-110 transition-transform"
+																		>
+																			<FaLinkedin size={24} />
+																		</a>
+																	</div>
+																)}
 							</div>
 							<hr className='text-gray-300 mt-4 mb-5' />
 

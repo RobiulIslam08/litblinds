@@ -202,16 +202,20 @@ const Navbar = () => {
 
 					{/* notice cart user */}
 					<div className='flex items-center lg:gap-4 gap-2'>
+						{/* notice */}
 						<div className='flex flex-col items-center leading-2.5 relative'>
 							<div>
 								<IoNotifications className='text-primary' />
-								<p className='absolute text-white bg-red-400 font-bold p-[1.5px] rounded-full  text-[10px] right-1 bottom-3'>4</p>
+								<p className='absolute text-white bg-red-400 font-bold p-[1.5px] rounded-full  text-[10px] right-1 bottom-3 lg:bottom-6'>4</p>
 							</div>
 							<p className='text-xs  hidden lg:flex'>Notice</p>
 						</div>
 						{/* cart */}
 						<div className="flex flex-col items-center leading-2.5 relative group cursor-pointer">
-							<FaShoppingCart className="text-primary" onClick={toggleMenuCart} />
+							<div>
+								<FaShoppingCart className="text-primary" onClick={toggleMenuCart} />
+								<p className='absolute text-white bg-red-400 font-bold p-[1.5px] rounded-full  text-[10px] right-1 bottom-3 lg:bottom-6'>4</p>
+							</div>
 							<p className="text-xs hidden lg:flex">Cart</p>
 
 							{/* Dropdown */}
@@ -273,7 +277,7 @@ const Navbar = () => {
 					<div className="p-4 border-b border-blue-700">
 						<div className="flex items-center gap-3">
 							<div className="w-12 h-12 rounded-full bg-white overflow-hidden">
-								<img src="/placeholder.svg?height=48&width=48" alt="Profile" className="w-full h-full object-cover" />
+								<img src="https://i.ibb.co.com/gb5qBZBd/IMG-20250413-175646-1.jpg" alt="Profile" className="w-full h-full object-cover" />
 							</div>
 							<div className="text-white">
 								<h3 className="font-bold text-lg">Robi</h3>
@@ -286,7 +290,7 @@ const Navbar = () => {
 							<a
 								key={item.path}
 								href={item.path}
-								className="block text-base font-semibold px-4 py-2 rounded  transition duration-200 text-white"
+								className="block text-base font-semibold px-4 py-2 rounded  transition duration-200 text-white hover:bg-gray-200 hover:text-black"
 								onClick={() => setIsOpen(false)}
 							>
 								{item.name}
