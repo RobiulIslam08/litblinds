@@ -1,10 +1,12 @@
 import { Home } from 'lucide-react';
 import React, { useState } from 'react';
 import { ChevronRight, CreditCard, Shield, Globe, LayoutGrid, QrCode, BellRing } from "lucide-react"
-import { FaUser, FaShoppingCart, FaExchangeAlt, FaCreditCard, FaHeart } from "react-icons/fa"
+import { FaUser, FaShoppingCart, FaExchangeAlt, FaCreditCard, FaHeart, FaCcVisa, FaCcStripe } from "react-icons/fa"
 import { Link } from 'react-router-dom';
 import Dropdown from '../components/home/Dropdown';
 import specialOffer from '../assets/images/special-offer.jpg'
+import { RiDeleteBack2Line } from 'react-icons/ri';
+import qrCode from '../assets/images/scan_me_qr_code.jpg'
 const UserProfilePage = () => {
 	const [showAddressForm, setShowAddressForm] = useState(false)
 
@@ -19,6 +21,9 @@ const UserProfilePage = () => {
 		language: false,
 		security: false,
 		country: false,
+		warrenty: false,
+		qrCode: false,
+		notification: false
 	})
 
 	const [selectedLanguage, setSelectedLanguage] = useState("select")
@@ -94,7 +99,7 @@ const UserProfilePage = () => {
 					<div className="font-medium text-xs md:text-base">Your Running Order Delivery : -227 Days</div>
 					<div className="font-medium text-xs md:text-base">Time: -14:-40:-8</div>
 				</div>
-<img src={specialOffer} className='h-[200px] md:h-[300px] lg:h-[500px] w-full' alt="" />
+				<img src={specialOffer} className='h-[200px] md:h-[300px] lg:h-[500px] w-full' alt="" />
 				{/* Dashboard Cards */}
 				<div className="grid grid-cols-1  md:grid-cols-4 p-10 gap-4">
 					{/* Order Card */}
@@ -234,6 +239,7 @@ const UserProfilePage = () => {
 
 						{/* Payment Method Section */}
 						<div>
+
 							<div
 								className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50"
 								onClick={() => toggleSection("payment")}
@@ -278,46 +284,19 @@ const UserProfilePage = () => {
 										<div className="flex items-center justify-between p-2 border-b border-gray-400">
 											<div>4520********21BB M****</div>
 											<div className="flex items-center space-x-2">
-												<div className="bg-gray-800 text-white text-xs px-1.5 py-0.5 rounded">HD</div>
-												<button className="text-gray-500">
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="20"
-														height="20"
-														viewBox="0 0 24 24"
-														fill="none"
-														stroke="currentColor"
-														strokeWidth="2"
-														strokeLinecap="round"
-														strokeLinejoin="round"
-													>
-														<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-														<circle cx="12" cy="12" r="3"></circle>
-													</svg>
-												</button>
+
+												<FaCcVisa size={24} />
+												<RiDeleteBack2Line size={24} />
 											</div>
 										</div>
 
 										<div className="flex items-center justify-between p-2 border-b border-gray-400">
 											<div>4520********21BB M****</div>
 											<div className="flex items-center space-x-2">
-												<div className="bg-gray-800 text-white text-xs px-1.5 py-0.5 rounded">HD</div>
-												<button className="text-gray-500">
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														width="20"
-														height="20"
-														viewBox="0 0 24 24"
-														fill="none"
-														stroke="currentColor"
-														strokeWidth="2"
-														strokeLinecap="round"
-														strokeLinejoin="round"
-													>
-														<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-														<circle cx="12" cy="12" r="3"></circle>
-													</svg>
-												</button>
+
+												<FaCcStripe size={24} />
+												<RiDeleteBack2Line size={24} />
+
 											</div>
 										</div>
 
@@ -330,8 +309,26 @@ const UserProfilePage = () => {
 						</div>
 
 						{/* Warranty Claims Section */}
-						<div className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50">
-							<div className="flex items-center">
+
+						<div>
+							<div onClick={() => toggleSection("warrenty")} className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50">
+								<div className="flex items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="20"
+										height="20"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										className="mr-3"
+									>
+										<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+									</svg>
+									<span>Warranty Claims</span>
+								</div>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="20"
@@ -342,60 +339,69 @@ const UserProfilePage = () => {
 									strokeWidth="2"
 									strokeLinecap="round"
 									strokeLinejoin="round"
-									className="mr-3"
+									className="text-gray-400"
 								>
-									<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+									<polyline points="9 18 15 12 9 6"></polyline>
 								</svg>
-								<span>Warranty Claims</span>
+
 							</div>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="20"
-								height="20"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								className="text-gray-400"
-							>
-								<polyline points="9 18 15 12 9 6"></polyline>
-							</svg>
+							{activeSections.warrenty && (<div className="p-4 space-y-4">
+								<div>
+									<label className="block text-sm font-medium mb-1">Order Number</label>
+									<input
+										type="text"
+										className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
+									/>
+								</div>
+
+								<div>
+									<label className="block text-sm font-medium mb-1">Product Number</label>
+									<input
+										type="text"
+										className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
+									/>
+								</div>
+
+								<div>
+									<label className="block text-sm font-medium mb-1">Problem</label>
+									<textarea
+										className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
+										rows="4"
+									></textarea>
+								</div>
+
+								<button className="w-full bg-gray-100 hover:bg-gray-200 py-2 rounded text-center">Sent Message</button>
+							</div>)}
 						</div>
 
-						{/* Form Section */}
-						<div className="p-4 space-y-4">
-							<div>
-								<label className="block text-sm font-medium mb-1">Order Number</label>
-								<input
-									type="text"
-									className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
-								/>
-							</div>
 
-							<div>
-								<label className="block text-sm font-medium mb-1">Product Number</label>
-								<input
-									type="text"
-									className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
-								/>
-							</div>
-
-							<div>
-								<label className="block text-sm font-medium mb-1">Problem</label>
-								<textarea
-									className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
-									rows="4"
-								></textarea>
-							</div>
-
-							<button className="w-full bg-gray-100 hover:bg-gray-200 py-2 rounded text-center">Sent Message</button>
-						</div>
 
 						{/* QR Code Section */}
-						<div className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50">
-							<div className="flex items-center">
+
+						<div>
+
+							<div onClick={() => toggleSection("qrCode")} className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50">
+								<div className="flex items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="20"
+										height="20"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										className="mr-3"
+									>
+										<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+										<rect x="7" y="7" width="3" height="3"></rect>
+										<rect x="14" y="7" width="3" height="3"></rect>
+										<rect x="7" y="14" width="3" height="3"></rect>
+										<rect x="14" y="14" width="3" height="3"></rect>
+									</svg>
+									<span>QR Code</span>
+								</div>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="20"
@@ -406,31 +412,17 @@ const UserProfilePage = () => {
 									strokeWidth="2"
 									strokeLinecap="round"
 									strokeLinejoin="round"
-									className="mr-3"
+									className="text-gray-400"
 								>
-									<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-									<rect x="7" y="7" width="3" height="3"></rect>
-									<rect x="14" y="7" width="3" height="3"></rect>
-									<rect x="7" y="14" width="3" height="3"></rect>
-									<rect x="14" y="14" width="3" height="3"></rect>
+									<polyline points="9 18 15 12 9 6"></polyline>
 								</svg>
-								<span>QR Code</span>
 							</div>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="20"
-								height="20"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								className="text-gray-400"
-							>
-								<polyline points="9 18 15 12 9 6"></polyline>
-							</svg>
+							{activeSections.qrCode && (<div>
+								<img src={qrCode} alt="" className='h-40 w-40' />
+							</div>)}
+
 						</div>
+
 					</div>
 				</div>
 
@@ -743,8 +735,27 @@ const UserProfilePage = () => {
 						</div>
 
 						{/* Notification Section */}
-						<div className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50">
-							<div className="flex items-center">
+						<div>
+							<div onClick={() => toggleSection("notification")} className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50">
+								<div className="flex items-center">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="20"
+										height="20"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										className="mr-3"
+									>
+										<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+										<line x1="12" y1="9" x2="12" y2="13"></line>
+										<line x1="12" y1="17" x2="12.01" y2="17"></line>
+									</svg>
+									<span>Notification</span>
+								</div>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="20"
@@ -755,29 +766,24 @@ const UserProfilePage = () => {
 									strokeWidth="2"
 									strokeLinecap="round"
 									strokeLinejoin="round"
-									className="mr-3"
+									className="text-gray-400"
 								>
-									<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-									<line x1="12" y1="9" x2="12" y2="13"></line>
-									<line x1="12" y1="17" x2="12.01" y2="17"></line>
+									<polyline points="9 18 15 12 9 6"></polyline>
 								</svg>
-								<span>Notification</span>
 							</div>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="20"
-								height="20"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								strokeWidth="2"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								className="text-gray-400"
-							>
-								<polyline points="9 18 15 12 9 6"></polyline>
-							</svg>
+
+							{activeSections.notification && (
+								<div className=" z-10 mt-2 w-full bg-white border border-gray-200 rounded shadow-md">
+									<ul className="text-sm text-gray-700">
+										<li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">🔔 New order received</li>
+										<li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">📦 Product shipped</li>
+										<li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">⚠️ Low stock alert</li>
+										<li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">🧾 New invoice created</li>
+									</ul>
+								</div>
+							)}
 						</div>
+
 					</div>
 				</div>
 			</div>

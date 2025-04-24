@@ -1,13 +1,14 @@
 
 import React, { useState } from 'react';
 
-import { FaSearch, FaShoppingCart } from 'react-icons/fa';
+import { FaCog, FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { FaLocationDot, FaUser } from 'react-icons/fa6';
 
 import { IoCall, IoLogOut, IoNotifications } from 'react-icons/io5';
 import videoLogo from "../assets/video.mp4"
 import Discount from './home/Discount';
 import { Link, useLocation } from 'react-router-dom';
+import { FaHome, FaCogs, FaRegImages, FaRegStickyNote, FaWarehouse, FaLightbulb, FaTools, FaQuestionCircle } from 'react-icons/fa';
 
 const Navbar = () => {
 	const location = useLocation();
@@ -30,17 +31,15 @@ const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const menuItems = [
-		{ name: 'Home', path: '/' },
-		{ name: 'Window Blinds', path: '/allproduct/window-blinds' },
-		{ name: 'Wallpaper', path: '/allproduct/wallpaper' },
-		{ name: 'Wall And Ceiling Panels', path: '/allproduct/wall-ceiling-panels' },
-		{ name: 'PPVC Flooring (Vinyl Flooring)', path: '/allproduct/pvc-flooring' },
-		{ name: 'Shop By Need/Room', path: '/allproduct/shop-by-need' },
-		{ name: 'Shop By Features', path: '/allproduct/shop-by-features' },
-		{ name: 'Help Center', path: '/help-center' },
-		// { name: 'Login', path: '/login' },
-		// { name: 'Registration', path: '/registration' },
-		// { name: 'Find Retailer', path: '/allproduct/find-retailer' },
+		{ name: 'Home', path: '/', icon: <FaHome /> },
+		{ name: 'Window Blinds', path: '/allproduct/window-blinds', icon: <FaCogs /> },
+		{ name: 'Wallpaper', path: '/allproduct/wallpaper', icon: <FaRegImages /> },
+		{ name: 'Wall And Ceiling Panels', path: '/allproduct/wall-ceiling-panels', icon: <FaRegStickyNote /> },
+		{ name: 'PPVC Flooring (Vinyl Flooring)', path: '/allproduct/pvc-flooring', icon: <FaWarehouse /> },
+		{ name: 'Shop By Need/Room', path: '/allproduct/shop-by-need', icon: <FaLightbulb /> },
+		{ name: 'Shop By Features', path: '/allproduct/shop-by-features', icon: <FaTools /> },
+		{ name: 'Help Center', path: '/help-center', icon: <FaQuestionCircle /> },
+		{ name: 'Settings', path: '/settings', icon: <FaCog />, mobileOnly: true },
 	];
 
 
@@ -272,7 +271,7 @@ const Navbar = () => {
 			{/* Mobile Menu */}
 			{/* Mobile Menu */}
 			{isOpen && (
-				<div className="md:hidden absolute  left-0 w-[75%] h-[550px]  bg-blue  z-30  animate-slide-in-left">
+				<div className="md:hidden absolute  left-0 w-[75%] h-[630px]  bg-blue  z-30  animate-slide-in-left">
 					{/* User profile section */}
 					<div className="p-4 border-b border-blue-700">
 						<div className="flex items-center gap-3">
@@ -285,20 +284,24 @@ const Navbar = () => {
 							</div>
 						</div>
 					</div>
-					<div className="py-1 space-y-2 ">
+					<div className="py-1 space-y-2">
 						{menuItems.map((item) => (
 							<a
 								key={item.path}
 								href={item.path}
-								className="block text-base font-semibold px-4 py-2 rounded  transition duration-200 text-white hover:bg-gray-200 hover:text-black"
+								className="block text-base font-semibold px-4 py-2 rounded transition duration-200 text-white hover:bg-gray-200 hover:text-black"
 								onClick={() => setIsOpen(false)}
 							>
-								{item.name}
+								{/* আইকনটি এখানে যুক্ত করা হয়েছে */}
+								<div className='flex items-center'>
+									<span className="mr-2  lg:hidden">{item.icon}</span>
+									{item.name}
+								</div>
 							</a>
 						))}
 					</div>
 					{/* for logout */}
-					<div className='flex items-center text-white px-4 py-1 gap-3 border w-fit m-4'>
+					<div className='flex items-center text-white px-4 py-1 gap-3 border w-fit m-4 mt-11'>
 						<IoLogOut className='text-lg' />
 						<p className='font-semibold'>Log Out</p>
 					</div>
