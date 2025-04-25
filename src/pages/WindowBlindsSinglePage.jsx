@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import img1 from '../assets/images/windowBlindsSinglePage/82_0.jpg';
 import img2 from '../assets/images/windowBlindsSinglePage/82_1.jpg';
-import { FaHeart, FaPlayCircle, FaShareAlt, FaStar } from 'react-icons/fa';
+import { FaFacebook, FaHeart, FaInstagram, FaLinkedin, FaPlayCircle, FaShareAlt, FaStar, FaTwitter } from 'react-icons/fa';
 import { CiHeart } from 'react-icons/ci';
 import insideImage from '../assets/images/windowBlindsSinglePage/inside.jpg'
 import defaultWidth from '../assets/images/windowBlindsSinglePage/Default_Width.jpg'
@@ -110,7 +110,7 @@ const WindowBlindsSinglePage = () => {
 							</div>
 
 							{/* cart, buy, heard, share button*/}
-							<div className='flex flex-wrap items-center gap-2 mt-3 md:mt-4 lg:mt-5'>
+							<div className='flex flex-wrap items-center gap-2 mt-3 md:mt-4 lg:mt-5 relative'>
 								<button className='border border-blue-500 px-3 py-1 text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition ease-in-outrounded-md'>Add To Cart</button>
 								<button className='border border-blue-500 px-3 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 text-white transition ease-in-outrounded-md'>Buy it Now</button>
 								<FaHeart className="border border-blue-500 px-3 py-1 hover:text-blue-500 hover:bg-white font-semibold bg-blue-500 transition ease-in-out h-9 w-9  cursor-pointer text-white rounded-md" />

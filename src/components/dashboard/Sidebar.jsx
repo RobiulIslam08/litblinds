@@ -11,7 +11,10 @@ export default function Sidebar() {
 			{/* filter  */}
 			<div className="flex justify-between items-center ">
 				<p className="font-semibold text-primary text-lg">Filter By</p>
-				<p className="border px-2 py-1 text-xs cursor-pointer">Clear All</p>
+			
+				<p className="bg-[#1e3b6f] text-white px-4 py-2 rounded-md text-sm font-medium shadow-md cursor-pointer border border-[#1e3b6f] transition-all duration-300 hover:bg-white hover:text-[#1e3b6f]">
+  Clear All
+</p>
 			</div>
 			<hr className="text-gray-400" />
 

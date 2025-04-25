@@ -3,6 +3,7 @@
 
 import { useState } from "react"
 import { ArrowLeft, Edit2 } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const EditProfilePage = () => {
   const [formData, setFormData] = useState({
@@ -53,9 +54,8 @@ const EditProfilePage = () => {
     <div className="max-w-2xl mx-auto bg-gray-100 min-h-screen my-7 md:my-12">
       {/* Header */}
       <div className="bg-gray-200 p-4 flex items-center">
-        <button className="mr-2">
-          <ArrowLeft size={20} />
-        </button>
+     
+        <Link to="/user-profile"> <ArrowLeft size={20} className="mr-2"/></Link>
         <h1 className="text-lg font-medium">Edit Profile Information</h1>
       </div>
 

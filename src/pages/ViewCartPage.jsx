@@ -1,6 +1,7 @@
 
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ViewCartPage = () => {
   return (
@@ -36,7 +37,7 @@ const ViewCartPage = () => {
           <div className="bg-gray-600 text-white text-center py-3 rounded-t-lg text-lg font-semibold">Your Subtotal</div>
           <div className="bg-gray-100 text-center py-6 rounded-b-lg">
             <p className="text-gray-700 font-medium text-base">Subtotal $0</p>
-            <button className="bg-blue hover:bg-primary text-white px-4 py-3 rounded-lg mt-4 w-full font-semibold transition-all duration-200">Confirm Order</button>
+      <Link to="/buy-it-now">      <button className="bg-blue hover:bg-primary text-white px-4 py-3 rounded-lg mt-4 w-full font-semibold transition-all duration-200">Confirm Order</button></Link>
           </div>
         </div>
 

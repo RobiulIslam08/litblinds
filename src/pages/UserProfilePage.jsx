@@ -7,12 +7,11 @@ import Dropdown from '../components/home/Dropdown';
 import specialOffer from '../assets/images/special-offer.jpg'
 import { RiDeleteBack2Line } from 'react-icons/ri';
 import qrCode from '../assets/images/scan_me_qr_code.jpg'
+import { MdDeleteForever } from 'react-icons/md';
 const UserProfilePage = () => {
-	const [showAddressForm, setShowAddressForm] = useState(false)
 
-	const toggleAddressForm = () => {
-		setShowAddressForm(!showAddressForm)
-	}
+
+
 
 	// Changed from single activeSection to an object with multiple active sections
 	const [activeSections, setActiveSections] = useState({
@@ -23,7 +22,8 @@ const UserProfilePage = () => {
 		country: false,
 		warrenty: false,
 		qrCode: false,
-		notification: false
+		notification: false,
+		addCard: false
 	})
 
 	const [selectedLanguage, setSelectedLanguage] = useState("select")
@@ -132,6 +132,7 @@ const UserProfilePage = () => {
 							<FaCreditCard className="text-2xl text-gray-700" />
 						</div>
 						<h3 className="font-bold">Litblinds Credits</h3>
+						<p>10 USD</p>
 					</div>
 
 					{/* Wishlist Card */}
@@ -281,35 +282,71 @@ const UserProfilePage = () => {
 							{activeSections.payment && (
 								<div className="p-4 pt-0">
 									<div className="space-y-4">
-										<div className="flex items-center justify-between p-2 border-b border-gray-400">
+										<div className="flex items-center justify-between p-2 border-b border-gray-400 hover:bg-gray-100">
 											<div>4520********21BB M****</div>
 											<div className="flex items-center space-x-2">
 
 												<FaCcVisa size={24} />
-												<RiDeleteBack2Line size={24} />
+												<MdDeleteForever size={24} className='text-red-500' />
 											</div>
 										</div>
 
-										<div className="flex items-center justify-between p-2 border-b border-gray-400">
+										<div className="flex items-center justify-between p-2 border-b border-gray-400 hover:bg-gray-100">
 											<div>4520********21BB M****</div>
 											<div className="flex items-center space-x-2">
 
 												<FaCcStripe size={24} />
-												<RiDeleteBack2Line size={24} />
+												<MdDeleteForever size={24} className='text-red-500' />
 
 											</div>
 										</div>
 
-										<button className="w-full bg-blue text-white py-2.5 hover:bg-primary transition-colors">
+										<button onClick={() => toggleSection("addCard")} className="w-full bg-blue text-white py-2.5 hover:bg-primary transition-colors">
 											Add Card
 										</button>
+										{activeSections.addCard && (
+											<div>
+												<div className='flex justify-between items-center gap-2'>
+													<div className='w-full'>
+														<label className="block text-sm font-medium mb-1">Card Number</label>
+														<input
+															type="number"
+															className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
+														/>
+													</div>
+													<div className='w-full'>
+														<label className="block text-sm font-medium mb-1">Card Holder</label>
+														<input
+															type="number"
+															className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
+														/>
+													</div>
+												</div>
+												<div className='flex justify-between items-center gap-2'>
+													<div className='w-full'>
+														<label className="block text-sm font-medium mb-1">Expires</label>
+														<input
+															type="number"
+															className="w-full border border-gray-400 rounded p-2 focus:outline-none  focus:ring-1 focus:ring-gray-400" placeholder='MM/YY'
+														/>
+													</div>
+													<div className='w-full'>
+														<label className="block text-sm font-medium mb-1">CSC</label>
+														<input
+															type="number"
+															className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
+														/>
+													</div>
+												</div>
+
+											</div>
+										)}
 									</div>
 								</div>
 							)}
 						</div>
 
 						{/* Warranty Claims Section */}
-
 						<div>
 							<div onClick={() => toggleSection("warrenty")} className="flex items-center justify-between p-4 cursor-pointer hover:bg-gray-50">
 								<div className="flex items-center">

@@ -33,7 +33,7 @@ const Discount = () => {
 	}, []);
 
 	return (
-		<div className='bg-[#1b2f5b] flex flex-row items-center text-white px-1 justify-between'>
+		<div className='bg-[#1b2f5b] flex flex-row items-center text-white px-1 justify-between py-1'>
 			<div className='hidden lg:flex'></div>
 			<div>
 				<p className='text-[10px] md:text-xs'>
