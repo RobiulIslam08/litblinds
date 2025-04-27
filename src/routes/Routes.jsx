@@ -21,6 +21,8 @@ import ViewCartPage from "../pages/ViewCartPage";
 import PayWithCardPage from "../pages/PayWithCardPage";
 import WallpaperDetailsPage from "../pages/WallpaperDetailsPage";
 
+
+
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -113,5 +115,6 @@ const router = createBrowserRouter([
 			// অন্যান্য route গুলো এখানে
 		],
 	},
+
 ]);
 export default router
