@@ -4,6 +4,7 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import Sidebar from "../components/dashboard/Sidebar";
  import YouMayAlsoLike from "../components/dashboard/YouMayAlsoLike";
 import { useState } from "react";
+import Filtering from "../components/WindowBlindsSinglePage/Filtering";
 
 export default function AllProductLayout() {
 	const location = useLocation();
@@ -41,6 +42,7 @@ export default function AllProductLayout() {
 					</div>
 				</aside>
 
+
 				{/* Main Content Area */}
 				<div className=" flex-1 p-4 md:p-6 overflow-y-auto">
 					<div className="hidden  lg:flex  justify-around bg-[#e9e9e8] p-2 rounded-md">
@@ -70,6 +72,8 @@ export default function AllProductLayout() {
 							{getPageTitle()}</p>
 						</div>
 					</div>
+					{/* filtering */}
+					<Filtering></Filtering>
 					<Outlet />
 				</div>
 			</div>
