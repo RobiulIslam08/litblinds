@@ -225,7 +225,7 @@ const Filtering = () => {
       )}
 
       {/* Drawer */}
-      <div className={`fixed top-0 left-0 h-full w-[90%] bg-white shadow-lg z-50 transition-transform duration-300 ease-in-out ${showDrawer ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`fixed top-0 left-0 h-full w-[80%] bg-white shadow-lg z-50 transition-transform duration-300 ease-in-out ${showDrawer ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="p-4 overflow-y-auto h-full pb-24">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold">Filters</h2>
@@ -258,21 +258,21 @@ const Filtering = () => {
       </div>
 
       {/* Overlay */}
-      {showDrawer && (
+      {/* {showDrawer && (
         <div
           onClick={() => setShowDrawer(false)}
           className="fixed inset-0 bg-black bg-opacity-30 z-40"
         />
-      )}
+      )} */}
 
 	  {/* sort by button */}
 	  {showDropdown && (
-        <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded shadow-md">
+        <div className="absolute z-10 mt-1 w-[250px] bg-white border border-gray-300 rounded shadow-md">
           {options.map((option) => (
             <div
               key={option}
               onClick={() => handleSelect(option)}
-              className={`px-4 py-2 cursor-pointer text-sm hover:bg-blue-500 hover:text-white ${
+              className={`px-4 py-2  cursor-pointer text-sm hover:bg-blue-500 hover:text-white ${
                 selectedSort === option ? 'bg-blue-500 text-white' : ''
               }`}
             >

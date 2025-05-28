@@ -12,7 +12,7 @@ import ShopByFeaturePage from "../pages/ShopByFeaturePage";
 import HelpCenter from "../pages/HelpCenter";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegistrationPage";
-import WindowBlindsSinglePage from "../pages/WindowBlindsSinglePage";
+
 import ALLProductSinglePage from "../pages/ALLProductSinglePage";
 import FindRetailer from "../pages/FindRetailer";
 import UserProfilePage from "../pages/UserProfilePage";
@@ -20,6 +20,7 @@ import EditProfilePage from "../pages/EditProfilePage";
 import ViewCartPage from "../pages/ViewCartPage";
 import PayWithCardPage from "../pages/PayWithCardPage";
 import WallpaperDetailsPage from "../pages/WallpaperDetailsPage";
+import WindowBlindsSinglePage from "../pages/WindowBlindsSinglePage";
 
 
 
@@ -34,55 +35,55 @@ const router = createBrowserRouter([
 				element: <Home></Home>
 			},
 			{
-				path:'help-center',
-				element:<HelpCenter></HelpCenter>
+				path: 'help-center',
+				element: <HelpCenter></HelpCenter>
 			},
 			{
-				path:'login',
-				element:<LoginPage></LoginPage>
+				path: 'login',
+				element: <LoginPage></LoginPage>
 			},
 			{
-				path:'registration',
-				element:<RegisterPage></RegisterPage>
+				path: 'registration',
+				element: <RegisterPage></RegisterPage>
 			},
 			{
-				path:'window-blinds-singlepage',
-				element:<WindowBlindsSinglePage></WindowBlindsSinglePage>
+				path: 'window-blinds-singlepage',
+				element: <WindowBlindsSinglePage></WindowBlindsSinglePage>
 			},
 			{
-				path:'all-product-singlepage',
-				element:<ALLProductSinglePage></ALLProductSinglePage>
+				path: 'all-product-singlepage',
+				element: <ALLProductSinglePage></ALLProductSinglePage>
 			},
 			{
-				path:'wallpaper-details-page',
-				element:<WallpaperDetailsPage></WallpaperDetailsPage>
+				path: 'wallpaper-details-page',
+				element: <WallpaperDetailsPage></WallpaperDetailsPage>
 			},
 			{
-				path:'find-retailer',
-				element:<FindRetailer></FindRetailer>
+				path: 'find-retailer',
+				element: <FindRetailer></FindRetailer>
 			},
 			{
-				path:'user-profile',
-				element:<UserProfilePage></UserProfilePage>
+				path: 'user-profile',
+				element: <UserProfilePage></UserProfilePage>
 			},
 			{
-				path:'edit-profile',
-				element:<EditProfilePage></EditProfilePage>
+				path: 'edit-profile',
+				element: <EditProfilePage></EditProfilePage>
 			},
 			{
-				path:'view-cart',
-				element:<ViewCartPage></ViewCartPage>
+				path: 'view-cart',
+				element: <ViewCartPage></ViewCartPage>
 			},
 			{
-				path:'buy-it-now',
-				element:<PayWithCardPage></PayWithCardPage>
+				path: 'buy-it-now',
+				element: <PayWithCardPage></PayWithCardPage>
 			}
-			
+
 		]
 	},
 	{
 		path: "/allproduct", // এইটা হবে অন্য layout এর parent route
-		element:<AllProductLayout></AllProductLayout>, // Home বাদে অন্য layout
+		element: <AllProductLayout></AllProductLayout>, // Home বাদে অন্য layout
 		errorElement: <ErrorPage />,
 		children: [
 			{
@@ -90,28 +91,28 @@ const router = createBrowserRouter([
 				element: <WallpapersPage />,
 			},
 			{
-				path:"window-blinds",
-				element:<WindowBlindsPage></WindowBlindsPage>
+				path: "window-blinds",
+				element: <WindowBlindsPage></WindowBlindsPage>
 			},
 			{
-				path:'wall-ceiling-panels',
-				element:<WallAndCeillingPanelPage></WallAndCeillingPanelPage>
+				path: 'wall-ceiling-panels',
+				element: <WallAndCeillingPanelPage></WallAndCeillingPanelPage>
 			},
 			{
-				path:'pvc-flooring',
-				element:<PvcFlooringPage></PvcFlooringPage>
+				path: 'pvc-flooring',
+				element: <PvcFlooringPage></PvcFlooringPage>
 			},
 			{
-				path:'shop-by-need',
-				element:<ShopNeedPage></ShopNeedPage>
+				path: 'shop-by-need',
+				element: <ShopNeedPage></ShopNeedPage>
 			},
 			{
-				path:'shop-by-features',
-				element:<ShopByFeaturePage></ShopByFeaturePage>
+				path: 'shop-by-features',
+				element: <ShopByFeaturePage></ShopByFeaturePage>
 			},
-			
-			
-			
+
+
+
 			// অন্যান্য route গুলো এখানে
 		],
 	},

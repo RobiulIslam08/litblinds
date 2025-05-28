@@ -337,7 +337,11 @@ const UserProfilePage = () => {
 															className="w-full border border-gray-400 rounded p-2 focus:outline-none focus:ring-1 focus:ring-gray-400"
 														/>
 													</div>
+													
 												</div>
+													<button  className="w-full bg-blue mt-2 text-white py-2.5 hover:bg-primary transition-colors">
+											Submit
+										</button>
 
 											</div>
 										)}
